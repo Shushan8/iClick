@@ -60,18 +60,18 @@ class NewColectoin extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(8),
                                   color: Color.fromARGB(255, 227, 242, 243)),
-                              child: Row(
+                              child:const Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Row(
+                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.all(10),
+                                        padding:  EdgeInsets.all(10),
                                         child: Image(
                                           image: AssetImage(
                                               'assetc/images/images.png'),
