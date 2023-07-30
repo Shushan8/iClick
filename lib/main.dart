@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-
-import 'package:i_click/screens/home.dart';
-import 'package:i_click/screens/profile.dart';
-
-import 'package:i_click/acitivity.dart';
 import 'package:i_click/home.dart';
-import 'package:i_click/messeges.dart';
+
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
+import 'package:i_click/screens/glxavor.dart';
 import 'package:provider/provider.dart';
 
 
@@ -20,10 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-// <<<<<<< hasmik_branch
-//     return const MaterialApp(
-//       home: Home(),
-// =======
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: ((context) => ColorGradient()),),
@@ -33,10 +26,9 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
     
-        home:Message (),
+        home:Home (),
     
       ),
-// >>>>>>> master
     );
   }
 }

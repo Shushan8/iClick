@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:i_click/cteat_colections.dart';
 import 'package:i_click/provider/provider.dart';
+import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:i_click/widget/your_collection.dart';
 import 'package:provider/provider.dart';
 
@@ -29,14 +30,14 @@ class _AddToColectionsState extends State<AddToColections> {
               child: Container(
                 height: 510,
                 width: 400,
-                decoration:const BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.horizontal(
                         left: Radius.circular(20), right: Radius.circular(20)),
-                    color:  Color.fromARGB(255, 189, 189, 189)),
+                    color: Color.fromARGB(255, 189, 189, 189)),
               ),
             ),
             Container(
-              decoration:const BoxDecoration(
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.horizontal(
                       left: Radius.circular(20), right: Radius.circular(20)),
                   color: Colors.white),
@@ -51,38 +52,27 @@ class _AddToColectionsState extends State<AddToColections> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                      const  Text(
+                        const Text(
                           'Save to collection',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>const CreatNewColections()));
-                          },
-                          child: Container(
-                            width: 130,
+                        ElevatedButtons(
+                            whdth: 130,
                             height: 40,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(colors: [
-                                colorProvider.colorGradient1,
-                                colorProvider.colorGradient2,
-                              ]),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child:const Center(
-                                child: Text(
-                              'New Collection',
-                              style: TextStyle(color: Colors.white),
-                            )),
-                          ),
-                        ),
+                            textbutton: 'New Collection',
+                            fontSizes: 12,
+                            borederRadi: 20,
+                            fanction: (){
+                              Navigator.of(context).push(MaterialPageRoute(
+                                 builder: (context) =>const CreatNewColections()));
+                            })
+                       
                       ],
                     ),
                   ),
                   const Padding(
-                    padding:  EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 20,
                     ),
                     child: Text(
@@ -104,7 +94,8 @@ class _AddToColectionsState extends State<AddToColections> {
                                   mainAxisSpacing: 25,
                                   // crossAxisSpacing: 25,
                                   mainAxisExtent: 160),
-                          itemBuilder: (context, index) =>const YourCollection()),
+                          itemBuilder: (context, index) =>
+                              const YourCollection()),
                     ),
                   ),
                 ],
@@ -118,12 +109,18 @@ class _AddToColectionsState extends State<AddToColections> {
                   width: 50,
                   decoration: BoxDecoration(
                       border: Border.all(
-                          width: 1, color:const Color.fromARGB(172, 194, 192, 192)),
+                          width: 1,
+                          color: const Color.fromARGB(172, 194, 192, 192)),
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white),
-                  child:const Icon(
-                    Icons.close,
-                    color: Colors.grey,
+                  child: InkWell(
+                    onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => const CreatNewColections()));
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      color: Colors.grey,
+                    ),
                   ),
                 ))
           ])

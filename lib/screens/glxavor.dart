@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:i_click/screens/secondscreen.dart';
+import 'package:i_click/widget/elevatedbutton.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Glxavor extends StatefulWidget {
+  const Glxavor({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Glxavor> createState() => _GlxavorState();
 }
 
-class _HomeState extends State<Home> {
+class _GlxavorState extends State<Glxavor> {
   final List img = [
-    'assetc/images/Cards.png',
+    'assetc/images/Cardss.png',
     'assetc/images/Cards (3).png',
     'assetc/images/Cards (1).png',
     'assetc/images/Cards (2).png',
@@ -66,43 +68,32 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.all(30.0),
-              child: Text(
-                'SHARE - INSPIRE - CONNECT',
-                style: TextStyle(
-                    fontSize: 17,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.w500),
-              ),
+              child:
+              GradientText(
+                        'SHARE - INSPIRE - CONNECT',
+                        style:const TextStyle(
+                          fontSize: 17,fontWeight: FontWeight.w600,
+                        ),
+                        colors:const [
+                          Color.fromARGB(255, 81, 81, 198),
+                          Color.fromARGB(255, 136, 139, 244)
+                        ],
+                      ),
+              
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SecondScreen(),
-                  ),
-                );
-              },
-              child: Container(
+            ElevatedButtons(
+                whdth: 300,
                 height: 50,
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: const Color.fromRGBO(136, 139, 244, 1),
-                ),
-                child: const Center(
-                  child: Text(
-                    'EXPLORE NOW',
-                    style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
-            )
+                textbutton:' EXPLORE NOW',
+                fanction: (){
+                       Navigator.of(context).push(MaterialPageRoute(builder:(context) => const SecondScreen()));
+                 
+                },
+                fontSizes: 17,
+                borederRadi: 25),
+           
           ],
         ),
       ),

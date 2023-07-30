@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:i_click/activity_feed.dart';
 import 'package:i_click/provider/provider.dart';
+import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:provider/provider.dart';
 
 class CreatNewColections extends StatelessWidget {
@@ -8,7 +9,7 @@ class CreatNewColections extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final colorProvider = Provider.of<ColorGradient>(context);
+    final colorProvider = Provider.of<ColorGradient>(context);
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Column(
@@ -22,14 +23,14 @@ class CreatNewColections extends StatelessWidget {
               child: Container(
                 height: 510,
                 width: 400,
-                decoration:const BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.horizontal(
                         left: Radius.circular(20), right: Radius.circular(20)),
                     color: Colors.grey),
               ),
             ),
             Container(
-                decoration:const BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.horizontal(
                         left: Radius.circular(20), right: Radius.circular(20)),
                     color: Colors.white),
@@ -50,13 +51,13 @@ class CreatNewColections extends StatelessWidget {
                                 filled: true,
                                 fillColor: Color.fromARGB(255, 246, 247, 249),
                                 disabledBorder: OutlineInputBorder(
-                                  borderSide:const BorderSide(
+                                  borderSide: const BorderSide(
                                       color:
                                           Color.fromARGB(255, 246, 247, 249)),
                                   borderRadius: BorderRadius.circular(50.0),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide:const BorderSide(
+                                  borderSide: const BorderSide(
                                       color:
                                           Color.fromARGB(255, 246, 247, 249)),
                                   borderRadius: BorderRadius.circular(50.0),
@@ -64,29 +65,17 @@ class CreatNewColections extends StatelessWidget {
                               ),
                             ),
                           ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) =>const ActivityFeed()));
-                            },
-                            child: Container(
-                              width: 360,
+                          ElevatedButtons(
+                              whdth: 360,
                               height: 60,
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(colors: [
-                                  colorProvider.colorGradient1,
-                                  colorProvider.colorGradient2
-                                ]),
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child:const Center(
-                                  child: Text(
-                                'CREATE COLLECTION',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
-                              )),
-                            ),
-                          ),
+                              textbutton: 'CREATE COLLECTIONs',
+                              fontSizes: 20,
+                              borederRadi: 50,
+                              fanction: (){
+                                 Navigator.of(context).push(MaterialPageRoute(builder:(context) => const ActivityFeed()));
+                 
+                              })
+                          
                         ],
                       )),
                 ])),
@@ -101,9 +90,14 @@ class CreatNewColections extends StatelessWidget {
                           width: 1, color: Color.fromARGB(172, 194, 192, 192)),
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white),
-                  child: const Icon(
-                    Icons.close,
-                    color: Colors.grey,
+                  child: InkWell(
+                    onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => const ActivityFeed()));
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      color: Colors.grey,
+                    ),
                   ),
                 ))
           ])

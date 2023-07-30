@@ -87,7 +87,7 @@ class Activity extends StatelessWidget {
                                   messagetext:userProvider.user[index].messagetext ,
                                   like: userProvider.user[index].like,
                                   imageIcon: userProvider.user[index].imageIcon,
-                                color: false,
+                                  color: false,
                                   follow: userProvider.user[index].follow,
                                   meseges: false,
                                 )),

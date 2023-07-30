@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:i_click/home.dart';
 import 'package:i_click/provider/userprovider.dart';
+import 'package:i_click/screens/glxavor.dart';
 import 'package:i_click/widget/coments.dart';
 import 'package:provider/provider.dart';
 
@@ -33,7 +34,7 @@ class Message extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) =>const Home()));
+                              MaterialPageRoute(builder: (context) =>const Glxavor()));
                         },
                         child:const Icon(
                           Icons.edit_square,
