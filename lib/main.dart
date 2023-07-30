@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+// <<<<<<< mane_brench
+// import 'package:i_click/cteat_colections.dart';
+
+// =======
 import 'package:i_click/screens/home.dart';
 import 'package:i_click/screens/profile.dart';
 
@@ -9,6 +13,7 @@ import 'package:i_click/messeges.dart';
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:provider/provider.dart';
+// >>>>>>> master
 
 
 void main() {
