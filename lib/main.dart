@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/add_colections.dart';
-import 'package:i_click/cteat_colections.dart';
+import 'package:i_click/acitivity.dart';
 import 'package:i_click/home.dart';
-import 'package:i_click/new_colection.dart';
+import 'package:i_click/messeges.dart';
+import 'package:i_click/provider/provider.dart';
+import 'package:i_click/provider/userprovider.dart';
+import 'package:provider/provider.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +15,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-
-      home:CreatNewColections (),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: ((context) => ColorGradient()),),
+        ChangeNotifierProvider(create: ((context) => UserProvider()),),
+        
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+    
+        home:Message (),
+    
+      ),
     );
   }
 }

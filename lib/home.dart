@@ -1,24 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/new_colection.dart';
+import 'package:i_click/provider/provider.dart';
+import 'package:i_click/provider/userprovider.dart';
+import 'package:i_click/widget/coments.dart';
+import 'package:i_click/widget/imga_name.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final colorProvider = Provider.of<ColorGradient>(context);
+    final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 15, top: 40, right: 15),
+            Padding(
+              padding:const EdgeInsets.only(left: 15, top: 40, right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.arrow_back,
-                    size: 35,
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>const NewColectoin()));
+                    },
+                    child:const Icon(
+                      Icons.arrow_back,
+                      size: 35,
+                    ),
                   ),
-                  SizedBox(
+                const  SizedBox(
                     width: 140,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,7 +46,7 @@ class Home extends StatelessWidget {
                           size: 35,
                         ),
                         Icon(
-                          Icons.backup_outlined,
+                          Icons.upload,
                           size: 35,
                         )
                       ],
@@ -53,22 +67,7 @@ class Home extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                children: [
-                                  Image(
-                                    image: AssetImage('assetc/images/images.png'),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 10),
-                                    child: Text(
-                                      'Thanh Pham',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              ImageName(),
                               Text(
                                 '1 hour ago',
                                 style:
@@ -79,10 +78,9 @@ class Home extends StatelessWidget {
                         ],
                       ),
                     ),
-                    
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: const Image(
+                   const Padding(
+                      padding:  EdgeInsets.symmetric(vertical: 10),
+                      child:  Image(
                         image: AssetImage(
                           'assetc/images/msnyz9L6gs4.jpg',
                         ),
@@ -90,12 +88,12 @@ class Home extends StatelessWidget {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Row(
                           children: [
-                            Padding(
+                          const  Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
                                 '125',
@@ -103,15 +101,27 @@ class Home extends StatelessWidget {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            Icon(
-                              Icons.visibility_outlined,
-                              color: Colors.blue,
-                            )
+                            ShaderMask(
+                              shaderCallback: (Rect bounds) {
+                                return LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.topRight,
+                                  colors: [
+                                    colorProvider.colorGradient1,
+                                    colorProvider.colorGradient2,
+                                  ],
+                                ).createShader(bounds);
+                              },
+                              child:const Icon(
+                                Icons.visibility_outlined,
+                                color: Colors.white,
+                              ),
+                            ),
                           ],
                         ),
                         Row(
                           children: [
-                            Padding(
+                         const   Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
                                 '20',
@@ -119,15 +129,27 @@ class Home extends StatelessWidget {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            Icon(
-                              Icons.chat_outlined,
-                              color: Colors.blue,
-                            )
+                            ShaderMask(
+                              shaderCallback: (Rect bounds) {
+                                return LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.topRight,
+                                  colors: [
+                                    colorProvider.colorGradient1,
+                                    colorProvider.colorGradient2,
+                                  ],
+                                ).createShader(bounds);
+                              },
+                              child:const Icon(
+                                Icons.textsms_outlined,
+                                color: Colors.white,
+                              ),
+                            ),
                           ],
                         ),
                         Row(
                           children: [
-                            Padding(
+                         const   Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
                                 '125',
@@ -135,10 +157,22 @@ class Home extends StatelessWidget {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            Icon(
-                              Icons.favorite_border,
-                              color: Colors.blue,
-                            )
+                            ShaderMask(
+                              shaderCallback: (Rect bounds) {
+                                return LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.topRight,
+                                  colors: [
+                                    colorProvider.colorGradient1,
+                                    colorProvider.colorGradient2,
+                                  ],
+                                ).createShader(bounds);
+                              },
+                              child:const Icon(
+                                Icons.favorite_border,
+                                color: Colors.white,
+                              ),
+                            ),
                           ],
                         ),
                       ],
@@ -157,6 +191,7 @@ class Home extends StatelessWidget {
                             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. ',
                             style: TextStyle(
                               fontSize: 16,
+                              height: 1.5,
                               color: Colors.grey,
                               fontWeight: FontWeight.w400,
                             ),
@@ -168,66 +203,27 @@ class Home extends StatelessWidget {
                       child: SizedBox(
                         height: 160,
                         child: GridView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: 3,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 1,
-                                  childAspectRatio: 3 / 1,
-                                  mainAxisSpacing: 20,
-                                  mainAxisExtent: 100),
-                          itemBuilder: (context, index) => Padding(
-                            padding: EdgeInsets.only(left: 15, top: 0, right: 15),
-                            child: Container(
-                              width: double.infinity,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Color.fromARGB(255, 227, 242, 243)),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Image(
-                                      image:
-                                          AssetImage('assetc/images/images.png'),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 10, bottom: 10),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Bruno Pham',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 17),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 10, bottom: 10),
-                                          child: Text(
-                                            'Great shot! | love it',
-                                            style: TextStyle(fontSize: 17),
-                                          ),
-                                        ),
-                                        Text(
-                                          '2 mins ago',
-                                          style: TextStyle(
-                                              color: Colors.grey, fontSize: 15),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
+                            scrollDirection: Axis.vertical,
+                            itemCount: 3,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 1,
+                                    childAspectRatio: 3 / 1,
+                                    mainAxisSpacing: 20,
+                                    mainAxisExtent: 100),
+                            itemBuilder: (context, index) => Coments(
+                                  imageUrl: userProvider.user[index].imageUrl,
+                                  texts: userProvider.user[index].texts,
+                                  coments: userProvider.user[index].coments,
+                                   messagetext: '',
+                                  iconn: false,
+                                  activity: '',
+                                  like: 'Like',
+                                  imageIcon: false,
+                                  follow: false,
+                                   meseges: false,
+                                   color: false,
+                                )),
                       ),
                     ),
                   ],
@@ -235,27 +231,25 @@ class Home extends StatelessWidget {
               ),
             ),
             Container(
-              child: 
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Image(
-                                      image: AssetImage('assetc/images/images.png'),
-                                    ),
-                      ),
-                      Container(
-                        width: 200,
-                      child: TextFormField(
-                      decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Add a comment",
-                        ),
-                      ),
-                ),
-                    ],
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Image(
+                      image: AssetImage('assetc/images/images.png'),
+                    ),
                   ),
-                
+                  Container(
+                    width: 200,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Add a comment",
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),
