@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/home.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/screens/glxavor.dart';
 import 'package:i_click/widget/coments.dart';

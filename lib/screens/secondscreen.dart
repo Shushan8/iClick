@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/search_screen.dart';
 import 'package:i_click/widget/imga_name.dart';
 import 'package:i_click/widget/navigationbar.dart';
 
@@ -34,18 +35,18 @@ class _SecondScreenState extends State<SecondScreen> {
                             hintText: 'Search',
                                   filled: true,
             
-                                  fillColor: Color.fromARGB(255, 190, 203, 228),
+                                  fillColor: Color.fromARGB(255, 198, 207, 224),
                                 
                                   disabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromARGB(255, 201, 212, 234)),
+                                            Color.fromARGB(255, 223, 228, 236)),
                                     borderRadius: BorderRadius.circular(50),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromARGB(255, 186, 197, 216)),
+                                            Color.fromARGB(255, 220, 227, 239)),
                                     borderRadius: BorderRadius.circular(50),
                                   ),
                                 ),
@@ -61,7 +62,10 @@ class _SecondScreenState extends State<SecondScreen> {
                     ),
                   
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => const SearchScreen()));
+
+                    },
                     child: const Icon(Icons.send),
                   ),
                 ],
@@ -112,7 +116,7 @@ class _SecondScreenState extends State<SecondScreen> {
                           ),
             ),
             Image.asset('assetc/images/222.png'),
-          const  Padding(
+            Padding(
               padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child:  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,6 +133,7 @@ class _SecondScreenState extends State<SecondScreen> {
                         Row(
                           children: [
                             Text('20'),
+                            
                             Icon(
                               Icons.chat_outlined,
                               color: Colors.blueAccent,

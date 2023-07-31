@@ -54,9 +54,9 @@ class Coments extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(10),
-                  child: Image(
-                    image: AssetImage(imageUrl),
-                  ),
+                    child: Image(
+                      image: AssetImage(imageUrl),
+                    ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 10),
