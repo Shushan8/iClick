@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/cteat_colections.dart';
+import 'package:i_click/screens/acitivity.dart';
 import 'package:i_click/provider/provider.dart';
-import 'package:i_click/widget/elevatedbutton.dart';
-import 'package:i_click/widget/your_collection.dart';
+import 'package:i_click/widget/swich.dart';
 import 'package:provider/provider.dart';
 
-class AddToColections extends StatefulWidget {
-  const AddToColections({super.key});
+class ActivityFeed extends StatefulWidget {
+  const ActivityFeed({super.key});
 
   @override
-  State<AddToColections> createState() => _AddToColectionsState();
+  State<ActivityFeed> createState() => _ActivityFeedState();
 }
 
-class _AddToColectionsState extends State<AddToColections> {
-  bool _flag = true;
+class _ActivityFeedState extends State<ActivityFeed> {
   @override
   Widget build(BuildContext context) {
     final colorProvider = Provider.of<ColorGradient>(context);
+
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Column(
@@ -33,7 +32,7 @@ class _AddToColectionsState extends State<AddToColections> {
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.horizontal(
                         left: Radius.circular(20), right: Radius.circular(20)),
-                    color: Color.fromARGB(255, 189, 189, 189)),
+                    color: Colors.grey),
               ),
             ),
             Container(
@@ -46,39 +45,17 @@ class _AddToColectionsState extends State<AddToColections> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 30),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Save to collection',
+                        Text(
+                          'Activity Feed',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
-                        ElevatedButtons(
-                            whdth: 130,
-                            height: 40,
-                            textbutton: 'New Collection',
-                            fontSizes: 12,
-                            borederRadi: 20,
-                            fanction: (){
-                              Navigator.of(context).push(MaterialPageRoute(
-                                 builder: (context) =>const CreatNewColections()));
-                            })
-                       
                       ],
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    child: Text(
-                      'Your Collections',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                     ),
                   ),
                   Container(
@@ -89,13 +66,40 @@ class _AddToColectionsState extends State<AddToColections> {
                           itemCount: 5,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  childAspectRatio: 4 / 4,
-                                  mainAxisSpacing: 25,
+                                  crossAxisCount: 1,
+                                  childAspectRatio: 3 / 3,
+                                  mainAxisSpacing: 10,
                                   // crossAxisSpacing: 25,
-                                  mainAxisExtent: 160),
-                          itemBuilder: (context, index) =>
-                              const YourCollection()),
+                                  mainAxisExtent: 70),
+                          itemBuilder: (context, index) => Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 30),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: const Color.fromARGB(
+                                        255, 246, 247, 249),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            colorProvider.text[index],
+                                            style: const TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                          StyledSwitch(
+                                            onToggled: (bool isToggled) {},
+                                          ),
+                                        ]),
+                                  ),
+                                ),
+                              )),
                     ),
                   ),
                 ],
@@ -114,8 +118,9 @@ class _AddToColectionsState extends State<AddToColections> {
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white),
                   child: InkWell(
-                    onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder:(context) => const CreatNewColections()));
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Activity()));
                     },
                     child: const Icon(
                       Icons.close,

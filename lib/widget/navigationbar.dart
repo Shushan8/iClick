@@ -28,7 +28,7 @@ class _NavigationBarState extends State<NavigationBarScreen> {
         });
       },
       height: 75,
-      backgroundColor: const Color.fromRGBO(136, 139, 244, 1),
+      backgroundColor: Color.fromARGB(255, 136, 140, 244),
       animationDuration: const Duration(milliseconds: 300),
     );
   }

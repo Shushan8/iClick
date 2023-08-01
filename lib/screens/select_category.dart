@@ -3,14 +3,14 @@ import 'package:i_click/screens/second_screens.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class Glxavor extends StatefulWidget {
-  const Glxavor({super.key});
+class SelectCategory extends StatefulWidget {
+  const SelectCategory({super.key});
 
   @override
-  State<Glxavor> createState() => _GlxavorState();
+  State<SelectCategory> createState() => _SelectCategoryState();
 }
 
-class _GlxavorState extends State<Glxavor> {
+class _SelectCategoryState extends State<SelectCategory> {
   final List img = [
     'assetc/images/Cardss.png',
     'assetc/images/Cards (3).png',
@@ -68,32 +68,30 @@ class _GlxavorState extends State<Glxavor> {
                 ),
               ),
             ),
-             Padding(
-              padding: EdgeInsets.all(30.0),
-              child:
-              GradientText(
-                        'SHARE - INSPIRE - CONNECT',
-                        style:const TextStyle(
-                          fontSize: 17,fontWeight: FontWeight.w600,
-                        ),
-                        colors:const [
-                          Color.fromARGB(255, 81, 81, 198),
-                          Color.fromARGB(255, 136, 139, 244)
-                        ],
-                      ),
-              
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: GradientText(
+                'SHARE - INSPIRE - CONNECT',
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                ),
+                colors: const [
+                  Color.fromARGB(255, 81, 81, 198),
+                  Color.fromARGB(255, 136, 139, 244)
+                ],
+              ),
             ),
             ElevatedButtons(
                 whdth: 300,
                 height: 50,
-                textbutton:' EXPLORE NOW',
-                fanction: (){
-               Navigator.of(context).push(MaterialPageRoute(builder:(context) => const SecondScreens()));
-                 
+                textbutton: ' EXPLORE NOW',
+                fanction: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SecondScreens()));
                 },
                 fontSizes: 17,
                 borederRadi: 25),
-           
           ],
         ),
       ),

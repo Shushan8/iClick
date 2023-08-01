@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/editprofile.dart';
 import 'package:i_click/widget/container.dart';
 import 'package:i_click/widget/navigationbar.dart';
 
@@ -118,20 +119,26 @@ class Profile extends StatelessWidget {
                     text: 'Terms & privacy',
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 690),
-                  child: Container(
-                    height: 42,
-                    width: 130,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white),
-                    child: const Center(
-                      child: Text(
-                        'Log out',
-                        style: TextStyle(
-                          fontSize: 16,
+                InkWell(
+                  onTap: (){
+                     Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const EditProfile()));
+                  },
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 30, vertical: 690),
+                    child: Container(
+                      height: 42,
+                      width: 130,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white),
+                      child: const Center(
+                        child: Text(
+                          'Log out',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     ),

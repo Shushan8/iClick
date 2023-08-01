@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/account.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
-import 'package:i_click/widget/iconka.dart';
 import 'package:i_click/widget/text_input.dart';
 
 class EditProfile extends StatefulWidget {
@@ -95,7 +95,10 @@ class _EditProfileState extends State<EditProfile> {
                           whdth: 350,
                           height: 50,
                           textbutton: 'SAVE CHANGES',
-                          fanction: () {},
+                          fanction: () {
+                             Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Account()));
+                          },
                           fontSizes: 17,
                           borederRadi: 25),
                     ],
@@ -114,7 +117,7 @@ class _EditProfileState extends State<EditProfile> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Padding(
+                             const Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 30 ),
                                 child: Icon(
@@ -150,14 +153,14 @@ class _EditProfileState extends State<EditProfile> {
                           left: 125,
                           top: 60,
                           child:  Padding(
-                              padding: EdgeInsets.symmetric(
+                              padding:const EdgeInsets.symmetric(
                                   horizontal: 100, vertical: 0),
                               child: Container(
                                  width: 30,
                                  height: 30,
                             decoration: BoxDecoration(color: Colors.purple,
                             borderRadius: BorderRadius.circular(6)),
-                                child: Icon(Icons.camera_alt_outlined, color: Colors.white,))),
+                                child:const Icon(Icons.camera_alt_outlined, color: Colors.white,))),
                           ),
                         
                       ]),

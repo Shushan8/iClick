@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/challenge_screen.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class Challenge1 extends StatelessWidget {
@@ -6,12 +7,12 @@ class Challenge1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final List image = [
+    final List image = [
       'assetc/images/11.png',
       'assetc/images/10.png',
     ];
     final List trend = ['assetc/images/12.png', 'assetc/images/12.png'];
-    
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -54,17 +55,23 @@ class Challenge1 extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Color.fromARGB(122, 158, 158, 158)),
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 32,
-                      color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChallengeScreen()));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 25, vertical: 50),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color:const Color.fromARGB(122, 158, 158, 158)),
+                      child:const Icon(
+                        Icons.arrow_back,
+                        size: 32,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -178,31 +185,30 @@ class Challenge1 extends StatelessWidget {
                       ),
                     ),
                   ),
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                     children: [
-                       GradientText(
-                         '350',
-                         style: const TextStyle(
-                           fontSize: 15,
-                           fontWeight: FontWeight.w500,
-                         ),
-                         colors: const [
-                           Color.fromARGB(255, 81, 81, 198),
-                           Color.fromARGB(255, 136, 139, 244)
-                         ],
-                       ),
-                    
-                    const   Text(
-                         'people have joined this challenge ',
-                         style: TextStyle(
-                           fontSize: 15,
-                           fontWeight: FontWeight.w500,
-                           color: Color.fromRGBO(143, 144, 167, 1),
-                         ),
-                       ),
-                     ],
-                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GradientText(
+                        '350',
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        colors: const [
+                          Color.fromARGB(255, 81, 81, 198),
+                          Color.fromARGB(255, 136, 139, 244)
+                        ],
+                      ),
+                      const Text(
+                        'people have joined this challenge ',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromRGBO(143, 144, 167, 1),
+                        ),
+                      ),
+                    ],
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(top: 40),
                     child: Row(
@@ -235,7 +241,8 @@ class Challenge1 extends StatelessWidget {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(50),
-                                    color: const Color.fromRGBO(136, 139, 244, 1),
+                                    color:
+                                        const Color.fromRGBO(136, 139, 244, 1),
                                   ),
                                   height: 10,
                                   width: 10,
@@ -247,22 +254,11 @@ class Challenge1 extends StatelessWidget {
                       ],
                     ),
                   ),
-                  
                   const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Lorem ipsum dolor sit amet,consectetur adipiscing elit. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus,',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromRGBO(88, 98, 116, 1),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: 30),
-                        child: Text(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    child: Column(
+                      children: [
+                        Text(
                           'Lorem ipsum dolor sit amet,consectetur adipiscing elit. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus,',
                           style: TextStyle(
                             fontSize: 16,
@@ -270,67 +266,24 @@ class Challenge1 extends StatelessWidget {
                             color: Color.fromRGBO(88, 98, 116, 1),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: const Color.fromRGBO(136, 139, 244, 1),
-                      ),
-                      height: 10,
-                      width: 10,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Row(
-                        children: [
-                          const Text(
-                            'Inspiration ',
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 30),
+                          child: Text(
+                            'Lorem ipsum dolor sit amet,consectetur adipiscing elit. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus,',
                             style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: const Color.fromRGBO(136, 139, 244, 1),
-                              ),
-                              height: 10,
-                              width: 10,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Color.fromRGBO(88, 98, 116, 1),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: image.length,
-                    itemBuilder: (context, index) => Container(
-                      child: Image.asset(
-                        image[index],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 0),
-                      child: Container(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                           color: const Color.fromRGBO(136, 139, 244, 1),
@@ -338,54 +291,107 @@ class Challenge1 extends StatelessWidget {
                         height: 10,
                         width: 10,
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Row(
-                        children: [
-                          const Text(
-                            'Trending ',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: const Color.fromRGBO(136, 139, 244, 1),
-                              ),
-                              height: 10,
-                              width: 10,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          children: [
+                            const Text(
+                              'Inspiration ',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: const Color.fromRGBO(136, 139, 244, 1),
+                                ),
+                                height: 10,
+                                width: 10,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 0, horizontal: 10),
-                  child: Container(
-                    height: 220,
+                    ],
+                  ),
+                  Container(
+                    height: 200,
                     width: double.infinity,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: trend.length,
-                      itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                      itemCount: image.length,
+                      itemBuilder: (context, index) => Container(
+                        child: Image.asset(
+                          image[index],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 0),
                         child: Container(
-                          child: Image.asset(
-                            trend[index],
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: const Color.fromRGBO(136, 139, 244, 1),
+                          ),
+                          height: 10,
+                          width: 10,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          children: [
+                            const Text(
+                              'Trending ',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: const Color.fromRGBO(136, 139, 244, 1),
+                                ),
+                                height: 10,
+                                width: 10,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                    child: Container(
+                      height: 220,
+                      width: double.infinity,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: trend.length,
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Container(
+                            child: Image.asset(
+                              trend[index],
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
                 ],
               ),
             ),
@@ -395,5 +401,3 @@ class Challenge1 extends StatelessWidget {
     );
   }
 }
-
-

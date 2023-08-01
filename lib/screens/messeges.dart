@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_click/provider/userprovider.dart';
-import 'package:i_click/screens/glxavor.dart';
+import 'package:i_click/screens/messagescreen.dart';
 import 'package:i_click/widget/coments.dart';
 import 'package:provider/provider.dart';
 
@@ -14,16 +14,16 @@ class Message extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-             Padding(
+              Padding(
               padding:const EdgeInsets.only(left: 15, top: 40, right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                const  Icon(
+              const  Icon(
                     Icons.arrow_back,
                     size: 35,
                   ),
-               const   Text(
+             const  Text(
                     'Message',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                   ),
@@ -33,7 +33,7 @@ class Message extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) =>const Glxavor()));
+                              MaterialPageRoute(builder: (context) =>const MessageScreen()));
                         },
                         child:const Icon(
                           Icons.edit_square,

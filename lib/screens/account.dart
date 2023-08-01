@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/widget/navigationbar.dart';
 
 class Account extends StatelessWidget {
   const Account({super.key});
@@ -12,40 +13,62 @@ class Account extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 170,
                 child: Image.asset(
                   'assetc/images/Header background.png',
                   fit: BoxFit.cover,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 150, left: 220),
-                child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(90),
-                      color: Colors.black),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 100, left: 220),
-                child: Row(
+              Positioned(
+                  child: Padding(
+                padding: const EdgeInsets.only(top: 70),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(
-                      '@brunopham',
-                      style: TextStyle(color: Colors.white),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 30),
+                      child: SizedBox(
+                        width: 250,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              child: const Text(
+                                '@brunopham',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 30),
+                              child: Icon(
+                                Icons.settings,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    SizedBox(
-                      width: 150,
-                    ),
-                    Icon(
-                      Icons.settings,
-                      color: Colors.white,
-                    )
+                    Stack(children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assetc/images/Avatar.png',
+                            width: 80,
+                            height: 80,
+                          ),
+                        ],
+                      ),
+                    ]),
                   ],
                 ),
-              )
+              ))
             ],
           ),
           SizedBox(
@@ -55,7 +78,7 @@ class Account extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20),
             child: Text(
               'Bruno Pham',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
             ),
           ),
           const SizedBox(
@@ -65,7 +88,7 @@ class Account extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20),
             child: const Text(
               'Da Nang, Vietnam',
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
           ),
           const SizedBox(
@@ -75,7 +98,8 @@ class Account extends StatelessWidget {
             height: 50,
             width: 470,
             decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+                color: Color.fromARGB(255, 246, 247, 249),
+                borderRadius: BorderRadius.circular(10)),
             child: const Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -167,41 +191,49 @@ class Account extends StatelessWidget {
           Container(
             height: 50,
             width: 470,
-            decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-            child: const Row(
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  '0',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+                Container(
+                  height: 40,
+                  width: 170,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Color.fromARGB(255, 243, 245, 247),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      '0 shots',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 31, 108, 171),
+                      ),
+                    ),
+                  ),
                 ),
-                SizedBox(
-                  width: 7,
+                Container(
+                  height: 40,
+                  width: 170,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      '10 Collections',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 31, 108, 171),
+                      ),
+                    ),
+                  ),
                 ),
-                Text(
-                  'shots',
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: const Color.fromARGB(255, 103, 101, 101)),
-                ),
-                SizedBox(
-                  width: 100,
-                ),
-                Text(
-                  '10',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
-                ),
-                SizedBox(
-                  width: 7,
-                ),
-                Text(
-                  'Collections',
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: const Color.fromARGB(255, 103, 101, 101)),
-                )
               ],
             ),
           ),
@@ -209,10 +241,11 @@ class Account extends StatelessWidget {
             height: 30,
           ),
           Image.asset(
-            'assetc/images/mard.png',
+            'assetc/images/Group0069991.png',
           )
         ],
       ),
+        bottomNavigationBar: const NavigationBarScreen(),
     );
   }
 }

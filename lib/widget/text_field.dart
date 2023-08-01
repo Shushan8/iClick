@@ -13,7 +13,11 @@ class TextFields extends StatelessWidget {
           width: 300,
           height: 40,
           child: TextField(
+            onTap: () {
+              
+            },
             decoration: InputDecoration(
+            
               prefixIcon: const Icon(Icons.search),
               hintText: 'Search',
               filled: true,
@@ -28,6 +32,7 @@ class TextFields extends StatelessWidget {
                     const BorderSide(color: Color.fromARGB(255, 243, 245, 247)),
                 borderRadius: BorderRadius.circular(50),
               ),
+
             ),
           ),
         ),

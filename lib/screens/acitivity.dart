@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/messeges.dart';
+import 'package:i_click/screens/messeges.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/widget/coments.dart';
 import 'package:provider/provider.dart';

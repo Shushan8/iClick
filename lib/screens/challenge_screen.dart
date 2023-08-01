@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/post.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class ChallengeScreen extends StatelessWidget {
@@ -49,17 +50,23 @@ class ChallengeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Color.fromARGB(122, 158, 158, 158)),
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 32,
-                      color: Colors.white,
+                InkWell(
+                  onTap: (){
+                     Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const Post()));
+                  },
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Color.fromARGB(122, 158, 158, 158)),
+                      child: Icon(
+                        Icons.arrow_back,
+                        size: 32,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

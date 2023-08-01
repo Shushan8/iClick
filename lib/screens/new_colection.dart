@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/add_colections.dart';
+import 'package:i_click/screens/add_colections.dart';
 import 'package:i_click/widget/coments.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 
@@ -8,31 +8,30 @@ class NewColectoin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding:const EdgeInsets.only(left: 15, top: 40, right: 15),
+              padding: const EdgeInsets.only(left: 15, top: 40, right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const AddToColections()));
+                          builder: (context) => const AddToColections()));
                     },
-                    child:const Icon(
+                    child: const Icon(
                       Icons.arrow_back,
                       size: 35,
                     ),
                   ),
-                const  Text(
+                  const Text(
                     'Comments',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                   ),
-                 const Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(
@@ -61,11 +60,11 @@ class NewColectoin extends StatelessWidget {
                                     childAspectRatio: 3 / 1,
                                     mainAxisSpacing: 20,
                                     mainAxisExtent: 100),
-                            itemBuilder: (context, index) =>const  Coments(
+                            itemBuilder: (context, index) => const Coments(
                                   imageUrl: 'assetc/images/images.png',
                                   texts: 'Bruno Pham',
                                   coments: 'Great shot | love it',
-                                   messagetext: '',
+                                  messagetext: '',
                                   iconn: true,
                                   activity: '',
                                   color: false,
@@ -74,7 +73,6 @@ class NewColectoin extends StatelessWidget {
                                   follow: false,
                                   meseges: false,
                                 )),
-
                       ),
                     ),
                   ],
@@ -92,7 +90,7 @@ class NewColectoin extends StatelessWidget {
                       child: Container(
                         width: 200,
                         child: TextFormField(
-                          decoration:const InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: "Add a comment",
                           ),
@@ -100,8 +98,9 @@ class NewColectoin extends StatelessWidget {
                       ),
                     ),
                     ElevatedButtons(
-                      fanction: (){},
-                      whdth: 60,fontSizes: 12,
+                      fanction: () {},
+                      whdth: 60,
+                      fontSizes: 12,
                       height: 40,
                       borederRadi: 50,
                       textbutton: 'Post',

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/search_screen.dart';
 import 'package:i_click/widget/discover.dart';
 import 'package:i_click/widget/navigationbar.dart';
 import 'package:i_click/widget/text_field.dart';
-import 'package:i_click/widget/your_collection.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({super.key});
@@ -25,7 +25,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   final List controllertext = [
     'PORTRAI PHOTOGRAPHY',
     'MUSIC VIDEO',
-        'MUSIC VIDEO',
+    'MUSIC VIDEO',
   ];
 
   final List topicText = [
@@ -40,9 +40,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 45, left: 20, right: 20, bottom: 20),
+            const Padding(
+              padding:
+                  EdgeInsets.only(top: 45, left: 20, right: 20, bottom: 20),
               child: TextFields(
                 icon: true,
               ),
@@ -79,14 +79,20 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       crossAxisCount: 1,
                       mainAxisExtent: 165,
                     ),
-                    itemBuilder: (context, index) => Discover(
-                     sizedheights: 0,
-                          positionHeights: 90,
-                          topicText2: '',
-                          widths: 200,
-                          heights: 95,
-                          imagesurl: topic[index],
-                          topicText: topicText[index],
+                    itemBuilder: (context, index) => InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const SearchScreen()));
+                          },
+                          child: Discover(
+                            sizedheights: 0,
+                            positionHeights: 90,
+                            topicText2: '',
+                            widths: 200,
+                            heights: 95,
+                            imagesurl: topic[index],
+                            topicText: topicText[index],
+                          ),
                         )),
               ),
             ),
@@ -123,7 +129,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       mainAxisExtent: 170,
                     ),
                     itemBuilder: (context, index) => Discover(
-                     sizedheights: 25,
+                          sizedheights: 25,
                           positionHeights: 150,
                           topicText2: '70 photos',
                           widths: 400,
@@ -166,7 +172,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       mainAxisExtent: 170,
                     ),
                     itemBuilder: (context, index) => Discover(
-                     sizedheights: 25,
+                          sizedheights: 25,
                           positionHeights: 150,
                           topicText2: '70 photos',
                           widths: 400,

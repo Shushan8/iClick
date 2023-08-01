@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/profile.dart';
 
 class MessageScreen extends StatelessWidget {
   const MessageScreen({super.key});
@@ -10,15 +11,23 @@ class MessageScreen extends StatelessWidget {
         child: Stack(children: [
           Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.all(30.0),
+               Padding(
+                padding:const EdgeInsets.all(30.0),
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.arrow_back,
-                      size: 28,
+                    InkWell(
+                      onTap: (){
+                        
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Profile()));
+                
+                      },
+                      child:const Icon(
+                        Icons.arrow_back,
+                        size: 28,
+                      ),
                     ),
-                    Padding(
+                  const  Padding(
                       padding: EdgeInsets.symmetric(horizontal: 120),
                       child: Text(
                         'Bruno',
@@ -155,7 +164,7 @@ class MessageScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Type something',
-                      prefixIcon: Icon(Icons.image_outlined)),
+                      prefixIcon:const Icon(Icons.image_outlined)),
                 ),
               )
             ],

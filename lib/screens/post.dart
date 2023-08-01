@@ -1,19 +1,17 @@
 
 import 'package:flutter/material.dart';
-import 'package:i_click/new_colection.dart';
-import 'package:i_click/provider/provider.dart';
+import 'package:i_click/screens/new_colection.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/widget/coments.dart';
 import 'package:i_click/widget/iconka.dart';
 import 'package:i_click/widget/imga_name.dart';
 import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Post extends StatelessWidget {
+  const Post({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final colorProvider = Provider.of<ColorGradient>(context);
     final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(

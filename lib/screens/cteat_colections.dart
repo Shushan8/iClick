@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/activity_feed.dart';
-import 'package:i_click/provider/provider.dart';
+import 'package:i_click/screens/activity_feed.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
-import 'package:provider/provider.dart';
+import 'package:i_click/widget/text_filed_regist.dart';
 
 class CreatNewColections extends StatelessWidget {
   const CreatNewColections({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final colorProvider = Provider.of<ColorGradient>(context);
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Column(
@@ -43,27 +41,13 @@ class CreatNewColections extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 40),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: "Type name",
-                                filled: true,
-                                fillColor: Color.fromARGB(255, 246, 247, 249),
-                                disabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color:
-                                          Color.fromARGB(255, 246, 247, 249)),
-                                  borderRadius: BorderRadius.circular(50.0),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color:
-                                          Color.fromARGB(255, 246, 247, 249)),
-                                  borderRadius: BorderRadius.circular(50.0),
-                                ),
-                              ),
-                            ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 40),
+                            child: TextFiledRegister(
+                                filedHintText: 'Type name',
+                                filedWidth: 360,
+                                filedIcon: Icons.abc,
+                                filedIcons: false),
                           ),
                           ElevatedButtons(
                               whdth: 360,
@@ -71,11 +55,11 @@ class CreatNewColections extends StatelessWidget {
                               textbutton: 'CREATE COLLECTIONs',
                               fontSizes: 20,
                               borederRadi: 50,
-                              fanction: (){
-                                 Navigator.of(context).push(MaterialPageRoute(builder:(context) => const ActivityFeed()));
-                 
+                              fanction: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ActivityFeed()));
                               })
-                          
                         ],
                       )),
                 ])),
@@ -87,12 +71,13 @@ class CreatNewColections extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                       border: Border.all(
-                          width: 1, color: Color.fromARGB(172, 194, 192, 192)),
+                          width: 1, color:const Color.fromARGB(172, 194, 192, 192)),
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white),
                   child: InkWell(
-                    onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder:(context) => const ActivityFeed()));
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const ActivityFeed()));
                     },
                     child: const Icon(
                       Icons.close,
