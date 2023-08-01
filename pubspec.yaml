@@ -105,6 +105,8 @@ flutter:
     - assetc/images/img2.png
     - assetc/images/img3.png
     - assetc/images/img4.png
+    - assetc/images/mard.png
+    - assetc/images/welcome.png
 
   #   - images/a_dot_ham.jpeg
 
