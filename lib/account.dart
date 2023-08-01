@@ -8,52 +8,68 @@ class Account extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-              height: 150,
-              width: double.infinity,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(15)),
-              child: Image.asset('assetc/images/Header background.png')),
-          // Container(
-          //   height: 150,
-          //   width: double.infinity,
-          //   decoration: BoxDecoration(
-          //       color: Colors.black, borderRadius: BorderRadius.circular(20)),
-          //   child: const Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     crossAxisAlignment: CrossAxisAlignment.center,
-          //     children: [
-          //       Text(
-          //         '@brunopham',
-          //         style: TextStyle(fontSize: 7, color: Colors.white),
-          //       ),
-          //       SizedBox(
-          //         width: 120,
-          //       ),
-          //       Icon(
-          //         Icons.home,
-          //         size: 10,
-          //         color: Colors.white,
-          //       )
-          //     ],
-          //   ),
-          // ),
+          Stack(
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: 200,
+                child: Image.asset(
+                  'assetc/images/Header background.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 150, left: 220),
+                child: Container(
+                  width: 90,
+                  height: 90,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(90),
+                      color: Colors.black),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 100, left: 220),
+                child: Row(
+                  children: [
+                    Text(
+                      '@brunopham',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(
+                      width: 150,
+                    ),
+                    Icon(
+                      Icons.settings,
+                      color: Colors.white,
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
           SizedBox(
-            height: 20,
+            height: 15,
           ),
-          Text(
-            'Bruno Pham',
-            style: TextStyle(fontSize: 15),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Text(
+              'Bruno Pham',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: const Text(
+              'Da Nang, Vietnam',
+              style: TextStyle(fontSize: 14, color: Colors.grey),
+            ),
           ),
           const SizedBox(
             height: 20,
-          ),
-          const Text(
-            'Da Nang, Vietnam',
-            style: TextStyle(fontSize: 10, color: Colors.grey),
-          ),
-          const SizedBox(
-            height: 30,
           ),
           Container(
             height: 50,
@@ -66,7 +82,7 @@ class Account extends StatelessWidget {
               children: [
                 Text(
                   '220',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
                 SizedBox(
                   width: 7,
@@ -78,11 +94,11 @@ class Account extends StatelessWidget {
                       color: const Color.fromARGB(255, 103, 101, 101)),
                 ),
                 SizedBox(
-                  width: 20,
+                  width: 100,
                 ),
                 Text(
                   '150',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
                 SizedBox(
                   width: 7,
@@ -97,7 +113,7 @@ class Account extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -117,6 +133,9 @@ class Account extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.blue),
               ),
+              SizedBox(
+                width: 10,
+              ),
               Icon(
                 Icons.install_desktop,
                 size: 30,
@@ -132,6 +151,9 @@ class Account extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.blue),
               ),
+              SizedBox(
+                width: 10,
+              ),
               Icon(
                 Icons.facebook,
                 size: 30,
@@ -140,7 +162,7 @@ class Account extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           Container(
             height: 50,
@@ -153,7 +175,7 @@ class Account extends StatelessWidget {
               children: [
                 Text(
                   '0',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
                 SizedBox(
                   width: 7,
@@ -165,11 +187,11 @@ class Account extends StatelessWidget {
                       color: const Color.fromARGB(255, 103, 101, 101)),
                 ),
                 SizedBox(
-                  width: 20,
+                  width: 100,
                 ),
                 Text(
                   '10',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
                 SizedBox(
                   width: 7,
@@ -183,6 +205,12 @@ class Account extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 30,
+          ),
+          Image.asset(
+            'assetc/images/mard.png',
+          )
         ],
       ),
     );

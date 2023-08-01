@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+// <<<<<<< gasparyan_brench
+import 'package:i_click/account.dart';
+import 'package:i_click/first_screen.dart';
+// =======
 
+// >>>>>>> master
 
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
@@ -12,7 +17,6 @@ import 'package:i_click/screens/search_screen.dart';
 import 'package:i_click/screens/second_screens.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -22,9 +26,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MultiProvider(
       providers: [
+// <<<<<<< gasparyan_brench
+        ChangeNotifierProvider(
+          create: ((context) => ColorGradient()),
+        ),
+        ChangeNotifierProvider(
+          create: ((context) => UserProvider()),
+        ),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: First_Page(),
+// =======
         ChangeNotifierProvider(create: ((context) => ColorGradient()),),
         ChangeNotifierProvider(create: ((context) => UserProvider()),),
          ChangeNotifierProvider(create: ((context) => SearchProvider()),),
@@ -35,6 +50,7 @@ class MyApp extends StatelessWidget {
     
         home:EditProfile (),
     
+// >>>>>>> master
       ),
     );
   }

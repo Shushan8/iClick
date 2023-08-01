@@ -105,6 +105,11 @@ flutter:
     - assetc/images/img2.png
     - assetc/images/img3.png
     - assetc/images/img4.png
+# <<<<<<< gasparyan_brench
+#     - assetc/images/mard.png
+#     - assetc/images/welcome.png
+
+# =======
     - assetc/images/mj2NwYH3wBA1.png
     - assetc/images/mj2NwYH3wBA.png
     - assetc/images/controllerimagess.png
@@ -112,6 +117,7 @@ flutter:
     - assetc/images/CdmpFw9vrX01.png
     - assetc/images/CdmpFw9vrX02.png
     - assetc/images/CdmpFw9vrX03.png
+# >>>>>>> master
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
