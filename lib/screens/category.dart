@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/widget/collection.dart';
+import 'package:i_click/widget/discover.dart';
 import 'package:i_click/widget/navigationbar.dart';
+import 'package:i_click/widget/text_field.dart';
+import 'package:i_click/widget/your_collection.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({super.key});
@@ -11,9 +13,25 @@ class CategoryScreen extends StatefulWidget {
 
 class _CategoryScreenState extends State<CategoryScreen> {
   final List topic = [
-    'assetc/images/5.png',
-    'assetc/images/6.png',
-    'assetc/images/5.png',
+    'assetc/images/mj2NwYH3wBA.png',
+    'assetc/images/mj2NwYH3wBA1.png',
+    'assetc/images/mj2NwYH3wBA1.png',
+  ];
+  final List controllerimage = [
+    'assetc/images/controllerimagess.png',
+    'assetc/images/controllerimagess.png',
+    'assetc/images/controllerimagess.png',
+  ];
+  final List controllertext = [
+    'PORTRAI PHOTOGRAPHY',
+    'MUSIC VIDEO',
+        'MUSIC VIDEO',
+  ];
+
+  final List topicText = [
+    'PHOTOGRAPY',
+    'UI DISIGN',
+    'UI DISIGN',
   ];
 
   @override
@@ -22,32 +40,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
-                  child: Container(
-                    height: 50,
-                    width: 350,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          prefixIcon: const Icon(Icons.search),
-                          hintText: 'Search'),
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: const Icon(Icons.send),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 45, left: 20, right: 20, bottom: 20),
+              child: TextFields(
+                icon: true,
+              ),
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -68,21 +66,32 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 ],
               ),
             ),
-            Container(
-              height: 110,
-              width: double.infinity,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: topic.length,
-                itemBuilder: (context, index) => Container(
-                  child: Image.asset(
-                    topic[index],
-                  ),
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Container(
+                height: 121,
+                width: 380,
+                child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1,
+                      mainAxisExtent: 165,
+                    ),
+                    itemBuilder: (context, index) => Discover(
+                     sizedheights: 0,
+                          positionHeights: 90,
+                          topicText2: '',
+                          widths: 200,
+                          heights: 95,
+                          imagesurl: topic[index],
+                          topicText: topicText[index],
+                        )),
               ),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -100,9 +109,32 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 ],
               ),
             ),
-            const CollectionScrren(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Container(
+                height: 180,
+                width: 390,
+                child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1,
+                      mainAxisExtent: 170,
+                    ),
+                    itemBuilder: (context, index) => Discover(
+                     sizedheights: 25,
+                          positionHeights: 150,
+                          topicText2: '70 photos',
+                          widths: 400,
+                          heights: 150,
+                          imagesurl: controllerimage[index],
+                          topicText: controllertext[index],
+                        )),
+              ),
+            ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -120,7 +152,30 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 ],
               ),
             ),
-            const CollectionScrren()
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Container(
+                height: 180,
+                width: 390,
+                child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1,
+                      mainAxisExtent: 170,
+                    ),
+                    itemBuilder: (context, index) => Discover(
+                     sizedheights: 25,
+                          positionHeights: 150,
+                          topicText2: '70 photos',
+                          widths: 400,
+                          heights: 150,
+                          imagesurl: controllerimage[index],
+                          topicText: controllertext[index],
+                        )),
+              ),
+            ),
           ],
         ),
       ),

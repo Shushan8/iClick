@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/screens/secondscreen.dart';
+import 'package:i_click/screens/second_screens.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -88,7 +88,7 @@ class _GlxavorState extends State<Glxavor> {
                 height: 50,
                 textbutton:' EXPLORE NOW',
                 fanction: (){
-                       Navigator.of(context).push(MaterialPageRoute(builder:(context) => const SecondScreen()));
+               Navigator.of(context).push(MaterialPageRoute(builder:(context) => const SecondScreens()));
                  
                 },
                 fontSizes: 17,

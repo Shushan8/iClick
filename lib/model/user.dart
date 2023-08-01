@@ -25,3 +25,14 @@ class Users {
       required this.color
   });
 }
+
+class Searc {
+  final String searcCartsText;
+final String searcCartsText2;
+final bool searcCardsTextTru;
+final bool searcCardsTextFals;
+final String searcCardsImages;
+  Searc({
+    required this.searcCartsText, required this.searcCartsText2, required this.searcCardsTextTru, required this.searcCardsTextFals, required this.searcCardsImages
+  });
+}

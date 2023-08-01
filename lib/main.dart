@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+// <<<<<<< gasparyan_brench
 import 'package:i_click/account.dart';
 import 'package:i_click/first_screen.dart';
+// =======
 
-import 'package:i_click/home.dart';
+// >>>>>>> master
 
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
+import 'package:i_click/screens/category.dart';
+import 'package:i_click/screens/challenge1.dart';
+import 'package:i_click/screens/editprofile.dart';
+import 'package:i_click/screens/messagescreen.dart';
+import 'package:i_click/screens/profile.dart';
+import 'package:i_click/screens/search_screen.dart';
+import 'package:i_click/screens/second_screens.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -19,6 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+// <<<<<<< gasparyan_brench
         ChangeNotifierProvider(
           create: ((context) => ColorGradient()),
         ),
@@ -29,6 +39,18 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: First_Page(),
+// =======
+        ChangeNotifierProvider(create: ((context) => ColorGradient()),),
+        ChangeNotifierProvider(create: ((context) => UserProvider()),),
+         ChangeNotifierProvider(create: ((context) => SearchProvider()),),
+        
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+    
+        home:EditProfile (),
+    
+// >>>>>>> master
       ),
     );
   }

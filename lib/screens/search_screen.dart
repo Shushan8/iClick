@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/provider/userprovider.dart';
+import 'package:i_click/widget/searc_cards.dart';
+import 'package:i_click/widget/text_field.dart';
+import 'package:provider/provider.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -10,50 +14,59 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    final List search = [
-      'assetc/images/13.png',
-      'assetc/images/14.png',
-      'assetc/images/15.png',
-      'assetc/images/16.png',
-    ];
+       final searcProvider = Provider.of<SearchProvider>(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
-              child: Container(
-                height: 50,
-                width: 350,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: const Color.fromRGBO(243, 245, 247, 1)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    prefixIcon: const Icon(Icons.search),
-                    labelText: 'Search',
-                    hintText: 'Type something',
-                  ),
-                ),
+           Padding(
+              padding: const EdgeInsets.only(
+                  top: 45, left: 20, right: 20, bottom: 20),
+              child: TextFields(
+                icon: false,
               ),
             ),
-            Container(
-              height: 900,
-              width: double.infinity,
-              child: GridView.builder(
-                itemCount: search.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
-                    childAspectRatio: 2 / 2,
-                    mainAxisExtent: 160),
-                itemBuilder: (context, index) => Image.asset(
-                  search[index],
-                ),
+             Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Container(
+                height: 650,
+                width: 380,
+                child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 4,
+                    
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          
+                      crossAxisCount: 4,
+                      crossAxisSpacing: 20,
+                      mainAxisExtent: 380,
+                    ),
+                    itemBuilder: (context, index) =>  SearchCards(
+                      searcCardsImages: searcProvider.search[index].searcCardsImages,
+                      searcCartsText: searcProvider.search[index].searcCartsText,
+                      searcCartsText2: searcProvider.search[index].searcCartsText2,
+                      searcCardsTextFals: searcProvider.search[index].searcCardsTextFals,
+                      searcCardsTextTru: searcProvider.search[index].searcCardsTextTru,
+                    )),
               ),
-            )
+            ),
+           
+            // Container(
+            //   height: 900,
+            //   width: double.infinity,
+            //   child: GridView.builder(
+            //     itemCount: search.length,
+            //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            //         crossAxisCount: 1,
+            //         childAspectRatio: 2 / 2,
+            //         mainAxisExtent: 160),
+            //     itemBuilder: (context, index) => Image.asset(
+            //       search[index],
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),
