@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class Challenge1 extends StatefulWidget {
+class Challenge1 extends StatelessWidget {
   const Challenge1({super.key});
 
   @override
-  State<Challenge1> createState() => _Challenge1State();
-}
-
-class _Challenge1State extends State<Challenge1> {
-  @override
   Widget build(BuildContext context) {
-    final List image = [
+     final List image = [
       'assetc/images/11.png',
       'assetc/images/10.png',
     ];
     final List trend = ['assetc/images/12.png', 'assetc/images/12.png'];
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -28,196 +25,231 @@ class _Challenge1State extends State<Challenge1> {
                   height: 276,
                   fit: BoxFit.contain,
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 50),
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 32,
-                    color: Colors.white,
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 250),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    height: 55,
-                    width: 360,
-                    child: const Center(
-                      child: Text(
-                        'BLACK & WHITE PHOTOGRAPHY',
-                        style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 330),
-                  child: Container(
-                    height: 55,
-                    width: 360,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color.fromRGBO(241, 241, 254, 1),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        hintText:
-                            'Deadline                           30 days left',
-                        hintStyle: const TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 405),
-                  child: Container(
-                    height: 55,
-                    width: 360,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color.fromRGBO(241, 241, 254, 1),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        hintText:
-                            'Prize                                         100.00',
-                        hintStyle: const TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 65, vertical: 485),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'READY TO WIN THIS ',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black54),
-                      ),
-                      Text(
-                        'CHALLENGE ',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromRGBO(136, 139, 244, 1)),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 65, vertical: 530),
-                  child: InkWell(
-                    onTap: () {},
+                Positioned(
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 250, left: 50, right: 50),
                     child: Container(
-                      height: 50,
-                      width: 350,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: const Color.fromRGBO(136, 139, 244, 1),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'SUBMIT YOUR SHOT',
-                          style: TextStyle(
-                              fontSize: 17,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 600),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        '350 ',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.blueAccent,
-                        ),
-                      ),
-                      Text(
-                        'people have joined this challenge ',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromRGBO(143, 144, 167, 1),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 680),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: const Color.fromRGBO(136, 139, 244, 1),
-                        ),
-                        height: 10,
-                        width: 10,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Row(
-                        children: [
-                          const Text(
-                            'Challenge ',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: const Color.fromRGBO(136, 139, 244, 1),
-                              ),
-                              height: 10,
-                              width: 10,
-                            ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.1),
+                            spreadRadius: 2,
+                            blurRadius: 2,
+                            offset: Offset(0, 1), // changes position of shadow
                           ),
                         ],
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      height: 55,
+                      width: 360,
+                      child: const Center(
+                        child: Text(
+                          'STREET NIGHT PORTRAIT',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
-                  ],
+                  ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 710),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Color.fromARGB(122, 158, 158, 158)),
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 32,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 1200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 50, vertical: 10),
+                    child: Container(
+                      height: 55,
+                      width: 360,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromRGBO(241, 241, 254, 1),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          hintText:
+                              'Deadline                           30 days left',
+                          hintStyle: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 50, vertical: 0),
+                    child: Container(
+                      height: 55,
+                      width: 360,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromRGBO(241, 241, 254, 1),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          hintText:
+                              'Prize                                         100.00',
+                          hintStyle: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 65, vertical: 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'R E A D Y   T O   W I N   T H I S   ',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black54),
+                        ),
+                        GradientText(
+                          'C H A L L E N G E',
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          colors: const [
+                            Color.fromARGB(255, 81, 81, 198),
+                            Color.fromARGB(255, 136, 139, 244)
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 65, vertical: 0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 50,
+                        width: 350,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: const Color.fromRGBO(136, 139, 244, 1),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'SUBMIT YOUR SHOT',
+                            style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       GradientText(
+                         '350',
+                         style: const TextStyle(
+                           fontSize: 15,
+                           fontWeight: FontWeight.w500,
+                         ),
+                         colors: const [
+                           Color.fromARGB(255, 81, 81, 198),
+                           Color.fromARGB(255, 136, 139, 244)
+                         ],
+                       ),
+                    
+                    const   Text(
+                         'people have joined this challenge ',
+                         style: TextStyle(
+                           fontSize: 15,
+                           fontWeight: FontWeight.w500,
+                           color: Color.fromRGBO(143, 144, 167, 1),
+                         ),
+                       ),
+                     ],
+                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: const Color.fromRGBO(136, 139, 244, 1),
+                            ),
+                            height: 10,
+                            width: 10,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            children: [
+                              const Text(
+                                'Challenge ',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50),
+                                    color: const Color.fromRGBO(136, 139, 244, 1),
+                                  ),
+                                  height: 10,
+                                  width: 10,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                  const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Column(
                     children: [
                       Text(
@@ -245,16 +277,13 @@ class _Challenge1State extends State<Challenge1> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 1030),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: const Color.fromRGBO(136, 139, 244, 1),
-                        ),
-                        height: 10,
-                        width: 10,
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: const Color.fromRGBO(136, 139, 244, 1),
                       ),
+                      height: 10,
+                      width: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -283,18 +312,15 @@ class _Challenge1State extends State<Challenge1> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 1050),
-                  child: Container(
-                    height: 200,
-                    width: double.infinity,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: image.length,
-                      itemBuilder: (context, index) => Container(
-                        child: Image.asset(
-                          image[index],
-                        ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: image.length,
+                    itemBuilder: (context, index) => Container(
+                      child: Image.asset(
+                        image[index],
                       ),
                     ),
                   ),
@@ -303,7 +329,7 @@ class _Challenge1State extends State<Challenge1> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 1275),
+                      padding: const EdgeInsets.symmetric(vertical: 0),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
@@ -342,7 +368,7 @@ class _Challenge1State extends State<Challenge1> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: 1315, horizontal: 10),
+                      vertical: 0, horizontal: 10),
                   child: Container(
                     height: 220,
                     width: double.infinity,
@@ -360,7 +386,8 @@ class _Challenge1State extends State<Challenge1> {
                     ),
                   ),
                 ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
@@ -368,3 +395,5 @@ class _Challenge1State extends State<Challenge1> {
     );
   }
 }
+
+

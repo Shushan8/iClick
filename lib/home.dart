@@ -4,6 +4,7 @@ import 'package:i_click/new_colection.dart';
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/widget/coments.dart';
+import 'package:i_click/widget/iconka.dart';
 import 'package:i_click/widget/imga_name.dart';
 import 'package:provider/provider.dart';
 
@@ -102,22 +103,8 @@ class Home extends StatelessWidget {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            ShaderMask(
-                              shaderCallback: (Rect bounds) {
-                                return LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.topRight,
-                                  colors: [
-                                    colorProvider.colorGradient1,
-                                    colorProvider.colorGradient2,
-                                  ],
-                                ).createShader(bounds);
-                              },
-                              child:const Icon(
-                                Icons.visibility_outlined,
-                                color: Colors.white,
-                              ),
-                            ),
+                            Iconka(ikonka: Icons.visibility_outlined)
+                           
                           ],
                         ),
                         Row(
@@ -130,22 +117,8 @@ class Home extends StatelessWidget {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            ShaderMask(
-                              shaderCallback: (Rect bounds) {
-                                return LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.topRight,
-                                  colors: [
-                                    colorProvider.colorGradient1,
-                                    colorProvider.colorGradient2,
-                                  ],
-                                ).createShader(bounds);
-                              },
-                              child:const Icon(
-                                Icons.textsms_outlined,
-                                color: Colors.white,
-                              ),
-                            ),
+                            Iconka(ikonka: Icons.textsms_outlined)
+                           
                           ],
                         ),
                         Row(
@@ -158,22 +131,8 @@ class Home extends StatelessWidget {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            ShaderMask(
-                              shaderCallback: (Rect bounds) {
-                                return LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.topRight,
-                                  colors: [
-                                    colorProvider.colorGradient1,
-                                    colorProvider.colorGradient2,
-                                  ],
-                                ).createShader(bounds);
-                              },
-                              child:const Icon(
-                                Icons.favorite_border,
-                                color: Colors.white,
-                              ),
-                            ),
+                            Iconka(ikonka: Icons.favorite_border)
+                            
                           ],
                         ),
                       ],
