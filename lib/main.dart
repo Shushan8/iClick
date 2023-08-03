@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/account.dart';
+import 'package:i_click/screens/account.dart';
 
 import 'package:i_click/screens/registration_screens/first_screen.dart';
 
