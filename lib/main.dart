@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'package:i_click/screens/registration_screens/first_screen.dart';
+import 'package:i_click/screens/registration_screens/welcome_screen.dart';
 
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
@@ -33,8 +33,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        //TODO: Widgetneri anunnery gcikav chi kareli kirac ayl piti ini "camel case",aysinqn FIrst_Page-y poxarinumq FirstPage-av
-        home: First_Page(),
+        home: WelcomeScreen(),
       ),
     );
   }

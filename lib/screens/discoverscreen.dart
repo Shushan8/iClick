@@ -42,7 +42,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           children: [
             const Padding(
               padding:
-                  EdgeInsets.only(top: 45, left: 20, right: 20, bottom: 20),
+                  EdgeInsets.only(top: 45, left: 10, right: 10, bottom: 20),
               child: TextFields(
                 icon: true,
               ),

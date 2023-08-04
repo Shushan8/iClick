@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/screens/select_category.dart';
+import 'package:i_click/screens/registration_screens/send_passwordscreen.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:i_click/widget/text_filed_regist.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class VerificationPassword extends StatefulWidget {
-  const VerificationPassword({super.key});
+class SendVerificationScreen extends StatefulWidget {
+  const SendVerificationScreen({super.key});
 
   @override
-  State<VerificationPassword> createState() => _VerificationPasswordState();
+  State<SendVerificationScreen> createState() => _SendVerificationScreenState();
 }
 
-class _VerificationPasswordState extends State<VerificationPassword> {
+class _SendVerificationScreenState extends State<SendVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +36,11 @@ class _VerificationPasswordState extends State<VerificationPassword> {
                     topRight: Radius.circular(20))),
             child: Column(
               children: [
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 GradientText(
-                  'SET NEW PASSWORD',
+                  'TYPE YOUR EMAIL',
                   style: const TextStyle(
                       fontSize: 16, fontWeight: FontWeight.w700),
                   colors: const [
@@ -52,7 +52,7 @@ class _VerificationPasswordState extends State<VerificationPassword> {
                   height: 20,
                 ),
                 Container(
-                  height: 60,
+                  height: 86,
                   width: 330,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
@@ -61,7 +61,7 @@ class _VerificationPasswordState extends State<VerificationPassword> {
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40),
                       child: Text(
-                        'Type your new password',
+                        'We will send you instruction on how to reset your password',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
@@ -76,20 +76,12 @@ class _VerificationPasswordState extends State<VerificationPassword> {
                   height: 30,
                 ),
                 const TextFiledRegister(
-                    filedHintText: 'Password',
+                    filedHintText: 'Emali',
                     filedWidth: 310,
-                    filedIcon: Icons.slideshow_rounded,
-                    filedIcons: true),
+                    filedIcon: Icons.abc,
+                    filedIcons: false),
                 const SizedBox(
-                  height: 20,
-                ),
-                const TextFiledRegister(
-                    filedHintText: 'Confirm Password',
-                    filedWidth: 310,
-                    filedIcon: Icons.slideshow_rounded,
-                    filedIcons: true),
-                const SizedBox(
-                  height: 30,
+                  height: 75,
                 ),
                 ElevatedButtons(
                     whdth: 310,
@@ -97,7 +89,7 @@ class _VerificationPasswordState extends State<VerificationPassword> {
                     textbutton: 'SEND',
                     fanction: () {
                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const SelectCategory ()));
+                          builder: (context) =>const VerificationPasswordScreen()));
                     },
                     fontSizes: 16,
                     borederRadi: 30),

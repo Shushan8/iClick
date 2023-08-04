@@ -1,17 +1,18 @@
+// import 'package:bloknot_1/send_verification.dart';
 import 'package:flutter/material.dart';
-import 'package:i_click/screens/registration_screens/send_password.dart';
+import 'package:i_click/screens/registration_screens/send_verificationscreen.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:i_click/widget/text_filed_regist.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class SendVerification extends StatefulWidget {
-  const SendVerification({super.key});
+class VerificationScreen extends StatefulWidget {
+  const VerificationScreen({super.key});
 
   @override
-  State<SendVerification> createState() => _SendVerificationState();
+  State<VerificationScreen> createState() => _VerificationScreenState();
 }
 
-class _SendVerificationState extends State<SendVerification> {
+class _VerificationScreenState extends State<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +37,11 @@ class _SendVerificationState extends State<SendVerification> {
                     topRight: Radius.circular(20))),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 GradientText(
-                  'TYPE YOUR EMAIL',
+                  'VERIFICATION',
                   style: const TextStyle(
                       fontSize: 16, fontWeight: FontWeight.w700),
                   colors: const [
@@ -57,18 +58,16 @@ class _SendVerificationState extends State<SendVerification> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: const Color.fromARGB(255, 241, 241, 254)),
-                  child: const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40),
-                      child: Text(
-                        'We will send you instruction on how to reset your password',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 17,
-                            height: 1.5,
-                            color: Colors.black),
-                      ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    child: Text(
+                      'A message with verification code was sent to your mobile phone.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,
+                          height: 1.5,
+                          color: Colors.black),
                     ),
                   ),
                 ),
@@ -76,20 +75,29 @@ class _SendVerificationState extends State<SendVerification> {
                   height: 30,
                 ),
                 const TextFiledRegister(
-                    filedHintText: 'Emali',
+                    filedHintText: 'Type verification code',
                     filedWidth: 310,
                     filedIcon: Icons.abc,
                     filedIcons: false),
                 const SizedBox(
-                  height: 75,
+                  height: 30,
+                ),
+                const Text(
+                  'D O N \' T  R E C E I V E  T H E  C O D E ',
+                  style: TextStyle(fontSize: 15, color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 30,
                 ),
                 ElevatedButtons(
                     whdth: 310,
                     height: 50,
-                    textbutton: 'SEND',
+                    textbutton: 'VERIFY',
                     fanction: () {
-                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const VerificationPassword()));
+                      
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>const SendVerificationScreen()));
+                    
                     },
                     fontSizes: 16,
                     borederRadi: 30),

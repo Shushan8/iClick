@@ -1,18 +1,17 @@
-// import 'package:bloknot_1/send_verification.dart';
 import 'package:flutter/material.dart';
-import 'package:i_click/screens/registration_screens/send_verification.dart';
+import 'package:i_click/screens/select_category.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:i_click/widget/text_filed_regist.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class Verification extends StatefulWidget {
-  const Verification({super.key});
+class VerificationPasswordScreen extends StatefulWidget {
+  const VerificationPasswordScreen({super.key});
 
   @override
-  State<Verification> createState() => _VerificationState();
+  State<VerificationPasswordScreen> createState() => _VerificationPasswordScreenState();
 }
 
-class _VerificationState extends State<Verification> {
+class _VerificationPasswordScreenState extends State<VerificationPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +40,7 @@ class _VerificationState extends State<Verification> {
                   height: 20,
                 ),
                 GradientText(
-                  'VERIFICATION',
+                  'SET NEW PASSWORD',
                   style: const TextStyle(
                       fontSize: 16, fontWeight: FontWeight.w700),
                   colors: const [
@@ -53,21 +52,23 @@ class _VerificationState extends State<Verification> {
                   height: 20,
                 ),
                 Container(
-                  height: 86,
+                  height: 60,
                   width: 330,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: const Color.fromARGB(255, 241, 241, 254)),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
-                    child: Text(
-                      'A message with verification code was sent to your mobile phone.',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17,
-                          height: 1.5,
-                          color: Colors.black),
+                  child: const Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 40),
+                      child: Text(
+                        'Type your new password',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 17,
+                            height: 1.5,
+                            color: Colors.black),
+                      ),
                     ),
                   ),
                 ),
@@ -75,29 +76,28 @@ class _VerificationState extends State<Verification> {
                   height: 30,
                 ),
                 const TextFiledRegister(
-                    filedHintText: 'Type verification code',
+                    filedHintText: 'Password',
                     filedWidth: 310,
-                    filedIcon: Icons.abc,
-                    filedIcons: false),
+                    filedIcon: Icons.slideshow_rounded,
+                    filedIcons: true),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
-                const Text(
-                  'D O N \' T  R E C E I V E  T H E  C O D E ',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
-                ),
+                const TextFiledRegister(
+                    filedHintText: 'Confirm Password',
+                    filedWidth: 310,
+                    filedIcon: Icons.slideshow_rounded,
+                    filedIcons: true),
                 const SizedBox(
                   height: 30,
                 ),
                 ElevatedButtons(
                     whdth: 310,
                     height: 50,
-                    textbutton: 'VERIFY',
+                    textbutton: 'SEND',
                     fanction: () {
-                      
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const SendVerification()));
-                    
+                       Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>const SelectCategory ()));
                     },
                     fontSizes: 16,
                     borederRadi: 30),

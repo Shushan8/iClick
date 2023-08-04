@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/screens/second_screens.dart';
+import 'package:i_click/screens/home.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -88,7 +88,7 @@ class _SelectCategoryState extends State<SelectCategory> {
                 textbutton: ' EXPLORE NOW',
                 fanction: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const SecondScreens()));
+                      builder: (context) => const Home()));
                 },
                 fontSizes: 17,
                 borederRadi: 25),

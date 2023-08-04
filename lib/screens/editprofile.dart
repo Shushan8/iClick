@@ -119,7 +119,7 @@ class _EditProfileState extends State<EditProfile> {
                             children: [
                              const Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 30 ),
+                                     EdgeInsets.symmetric(horizontal: 30 ),
                                 child: Icon(
                                   Icons.arrow_back,
                                   color: Colors.white,
