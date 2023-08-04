@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:i_click/screens/registration_screens/sign_up.dart';
 import 'package:i_click/screens/registration_screens/verification.dart';
@@ -13,8 +14,12 @@ class First_Page extends StatefulWidget {
 }
 
 class _First_PageState extends State<First_Page> {
+  
   @override
   Widget build(BuildContext context) {
+    // final authService = FirebaseAuth.instance;
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
     return Scaffold(
       body: Column(
         children: [

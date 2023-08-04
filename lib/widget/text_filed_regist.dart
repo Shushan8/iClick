@@ -8,7 +8,11 @@ class TextFiledRegister extends StatelessWidget {
   final bool filedIcons;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50)
+      ),
       width: filedWidth,
       child: TextField(
         decoration: InputDecoration(

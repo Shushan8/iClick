@@ -18,7 +18,7 @@ class TextFields extends StatelessWidget {
             },
             decoration: InputDecoration(
             
-              prefixIcon: const Icon(Icons.search),
+              prefixIcon: const Icon(Icons.search,color: Colors.blue,),
               hintText: 'Search',
               filled: true,
               fillColor: Color.fromARGB(255, 243, 245, 247),
