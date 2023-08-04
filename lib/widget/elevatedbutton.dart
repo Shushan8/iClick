@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 class ElevatedButtons extends StatelessWidget {
   const ElevatedButtons(
+    //TODO: nuynnel stex,parametreri anunnery koshamrniyn )) u ta menak xashangi tesaketic chum asum,yes kodin ancanot mard,yeshumum kodin u pen chum haskanum cer tvac anunneric
       {super.key,
       required this.whdth,
       required this.height,
@@ -22,6 +23,9 @@ class ElevatedButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorProvider = Provider.of<ColorGradient>(context);
     return InkWell(
+      //TODO: tvyal depqum animastn avelord pakagcery, u kariq kiriq hse sti 
+      // onTap: fanction;
+      
       onTap: (){
         fanction();
       },

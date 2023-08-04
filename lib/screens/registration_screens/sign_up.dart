@@ -15,6 +15,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //TODO: eli animast column,jnjel
       body: Column(
         children: [
           Stack(children: <Widget>[

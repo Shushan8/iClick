@@ -16,6 +16,7 @@ class _First_PageState extends State<First_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //TODO: Animast Column,jnjel
       body: Column(
         children: [
           Stack(children: <Widget>[
@@ -154,10 +155,10 @@ class _First_PageState extends State<First_Page> {
                       ],
                     ),
                   )
-                ]),
+                ],),
               ),
             )
-          ]),
+          ],),
         ],
       ),
     );

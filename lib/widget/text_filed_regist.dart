@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TextFiledRegister extends StatelessWidget {
-  const TextFiledRegister({super.key, required this.filedHintText, required this.filedWidth, required this.filedIcon, required this.filedIcons});
+
+  const TextFiledRegister({super.key, required this.filedHintText, required this.filedWidth, required this.filedIcon, required this.filedIcons,});
+  //TODO: Yes uxxaki xndrum uxxagrutyany u anunnerin ushadrutyun darcreciq,es parametrery kpoxiq
   final String filedHintText;
   final double filedWidth;
   final IconData filedIcon;

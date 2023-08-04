@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_click/account.dart';
+import 'package:i_click/screens/account.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:i_click/widget/text_input.dart';
 
