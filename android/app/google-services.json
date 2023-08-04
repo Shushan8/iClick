@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "332932953111",
+    "project_id": "iclick-87f4b",
+    "storage_bucket": "iclick-87f4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332932953111:android:9a56ef7f7b303c8ad85852",
+        "android_client_info": {
+          "package_name": "com.example.i_click"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332932953111-1v6vv5mngvt1dm2pehpfeic25r9lbkev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxIsJ50G_Gjd7ZkUvnYtEMbU3TWRMeE5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332932953111-1v6vv5mngvt1dm2pehpfeic25r9lbkev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

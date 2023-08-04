@@ -42,7 +42,7 @@ class Account extends StatelessWidget {
                                     fontSize: 14),
                               ),
                             ),
-                            Padding(
+                            const Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 30),
                               child: Icon(
@@ -71,11 +71,11 @@ class Account extends StatelessWidget {
               ))
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
             child: Text(
               'Bruno Pham',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
@@ -84,9 +84,9 @@ class Account extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: const Text(
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Text(
               'Da Nang, Vietnam',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
@@ -98,7 +98,7 @@ class Account extends StatelessWidget {
             height: 50,
             width: 470,
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 246, 247, 249),
+                color: const Color.fromARGB(255, 246, 247, 249),
                 borderRadius: BorderRadius.circular(10)),
             child: const Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -114,8 +114,7 @@ class Account extends StatelessWidget {
                 Text(
                   'Followers',
                   style: TextStyle(
-                      fontSize: 15,
-                      color: const Color.fromARGB(255, 103, 101, 101)),
+                      fontSize: 15, color: Color.fromARGB(255, 103, 101, 101)),
                 ),
                 SizedBox(
                   width: 100,
@@ -130,24 +129,23 @@ class Account extends StatelessWidget {
                 Text(
                   'Following',
                   style: TextStyle(
-                      fontSize: 15,
-                      color: const Color.fromARGB(255, 103, 101, 101)),
+                      fontSize: 15, color: Color.fromARGB(255, 103, 101, 101)),
                 )
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.network_cell,
                 size: 30,
                 color: Colors.grey,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Container(
@@ -157,15 +155,15 @@ class Account extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.blue),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              Icon(
+              const Icon(
                 Icons.install_desktop,
                 size: 30,
                 color: Colors.grey,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Container(
@@ -175,17 +173,17 @@ class Account extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.blue),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              Icon(
+              const Icon(
                 Icons.facebook,
                 size: 30,
                 color: Colors.grey,
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -201,7 +199,7 @@ class Account extends StatelessWidget {
                   width: 170,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: Color.fromARGB(255, 243, 245, 247),
+                    color: const Color.fromARGB(255, 243, 245, 247),
                   ),
                   child: TextButton(
                     onPressed: () {},
@@ -220,7 +218,6 @@ class Account extends StatelessWidget {
                   width: 170,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    
                   ),
                   child: TextButton(
                     onPressed: () {},
@@ -237,7 +234,7 @@ class Account extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Image.asset(
@@ -245,7 +242,7 @@ class Account extends StatelessWidget {
           )
         ],
       ),
-        bottomNavigationBar: const NavigationBarScreen(),
+      bottomNavigationBar: const NavigationBarScreen(),
     );
   }
 }
