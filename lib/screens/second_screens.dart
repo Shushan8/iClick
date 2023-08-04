@@ -13,6 +13,7 @@ class SecondScreens extends StatelessWidget {
       body: Column(
         children: [
           const Padding(
+            //TODO:sxala sti paddingnen ogtagorcely,hetoel 23-rd toxum noric padding kanchely,kam sized box ogtagorceciq,kam hanc yreciq ver mihat padding ini
             padding: EdgeInsets.only(top: 45, left: 20, right: 20),
             child: TextFields(
               icon: true,
@@ -33,7 +34,7 @@ class SecondScreens extends StatelessWidget {
                   child: TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const CategoryScreen()));
+                          builder: (context) => const CategoryScreen()));
                     },
                     child: const Text(
                       'Popular',
@@ -95,6 +96,7 @@ class SecondScreens extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    //TODO: sa chpiti cerqav ini sarqvac,qani vor hetagayum postery firebasicnq stanalu,u avtomat kerpov piti sarqvin uranq,isk traheti listview buildern ogtagorcum
                     HomePost(),
                     SizedBox(
                       height: 20,
