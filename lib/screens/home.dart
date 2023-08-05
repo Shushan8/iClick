@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_click/screens/discoverscreen.dart';
+// import 'package:i_click/screens/discoverscreen.dart';
 import 'package:i_click/widget/home_widget.dart';
 import 'package:i_click/widget/navigationbar.dart';
 import 'package:i_click/widget/text_field.dart';
