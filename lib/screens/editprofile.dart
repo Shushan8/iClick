@@ -92,15 +92,15 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                       ),
                       ElevatedButtons(
-                          whdth: 350,
-                          height: 50,
-                          textbutton: 'SAVE CHANGES',
+                          buttonwidth: 350,
+                          buttonheight: 50,
+                          buttontext: 'SAVE CHANGES',
                           fanction: () {
                              Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const Account()));
                           },
-                          fontSizes: 17,
-                          borederRadi: 25),
+                          buttonTextFontSize: 17,
+                          buttonborederRadius: 25),
                     ],
                   ),
                 ),

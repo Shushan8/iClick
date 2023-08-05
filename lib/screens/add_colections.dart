@@ -54,11 +54,11 @@ class _AddToColectionsState extends State<AddToColections> {
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         ElevatedButtons(
-                            whdth: 130,
-                            height: 40,
-                            textbutton: 'New Collection',
-                            fontSizes: 12,
-                            borederRadi: 20,
+                            buttonwidth: 130,
+                            buttonheight: 40,
+                            buttontext: 'New Collection',
+                            buttonTextFontSize: 12,
+                            buttonborederRadius: 20,
                             fanction: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) =>

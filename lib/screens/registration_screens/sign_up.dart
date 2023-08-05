@@ -40,28 +40,28 @@ class _SignUpState extends State<SignUp> {
                     height: 20,
                   ),
                   const TextFiledRegister(
-                    filedWidth: 350,
-                    filedHintText: 'Email',
+                    Width: 350,
+                    Text: 'Email',
                     filedIcon: Icons.abc,
-                    filedIcons: false,
+                    Icons: false,
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   const TextFiledRegister(
-                    filedWidth: 350,
-                    filedHintText: 'Email',
+                    Width: 350,
+                    Text: 'Email',
                     filedIcon: Icons.abc,
-                    filedIcons: false,
+                    Icons: false,
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   const TextFiledRegister(
-                    filedWidth: 350,
-                    filedHintText: 'Password',
+                    Width: 350,
+                    Text: 'Password',
                     filedIcon: Icons.dangerous,
-                    filedIcons: true,
+                    Icons: true,
                   ),
                   const SizedBox(
                     height: 35,
@@ -70,17 +70,17 @@ class _SignUpState extends State<SignUp> {
                     height: 20,
                   ),
                   ElevatedButtons(
-                      whdth: 310,
-                      height: 50,
-                      textbutton: 'SIGN IN',
+                      buttonwidth: 310,
+                      buttonheight: 50,
+                      buttontext: 'SIGN IN',
                       fanction: () {
                         
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>const Verification()));
                     
                       },
-                      fontSizes: 16,
-                      borederRadi: 30),
+                      buttonTextFontSize: 16,
+                      buttonborederRadius: 30),
                   const SizedBox(
                     height: 25,
                   ),

@@ -5,14 +5,14 @@ import 'package:i_click/widget/elevatedbutton.dart';
 import 'package:i_click/widget/text_filed_regist.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class First_Page extends StatefulWidget {
-  const First_Page({super.key});
+class FirstPage extends StatefulWidget {
+  const FirstPage({super.key});
 
   @override
-  State<First_Page> createState() => _First_PageState();
+  State<FirstPage> createState() => _First_PageState();
 }
 
-class _First_PageState extends State<First_Page> {
+class _First_PageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     // final authService = FirebaseAuth.instance;
@@ -47,19 +47,19 @@ class _First_PageState extends State<First_Page> {
                         height: 20,
                       ),
                       const TextFiledRegister(
-                        filedWidth: 350,
-                        filedHintText: 'Email',
+                        Width: 350,
+                        Text: 'Email',
                         filedIcon: Icons.abc,
-                        filedIcons: false,
+                        Icons: false,
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       const TextFiledRegister(
-                        filedWidth: 350,
-                        filedHintText: 'Password',
+                        Width: 350,
+                        Text: 'Password',
                         filedIcon: Icons.dangerous,
-                        filedIcons: true,
+                        Icons: true,
                       ),
                       const SizedBox(
                         height: 35,
@@ -84,12 +84,12 @@ class _First_PageState extends State<First_Page> {
                         height: 20,
                       ),
                       ElevatedButtons(
-                          whdth: 310,
-                          height: 50,
-                          textbutton: 'LOG IN',
+                      buttonwidth: 310,
+                          buttonheight: 50,
+                          buttontext: 'LOG IN',
                           fanction: () {},
-                          fontSizes: 16,
-                          borederRadi: 30),
+                          buttonTextFontSize: 16,
+                          buttonborederRadius: 30),
                       const SizedBox(
                         height: 35,
                       ),

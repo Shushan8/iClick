@@ -99,11 +99,11 @@ class NewColectoin extends StatelessWidget {
                     ),
                     ElevatedButtons(
                       fanction: () {},
-                      whdth: 60,
-                      fontSizes: 12,
-                      height: 40,
-                      borederRadi: 50,
-                      textbutton: 'Post',
+                      buttonwidth: 60,
+                      buttonTextFontSize: 12,
+                      buttonheight: 40,
+                      buttonborederRadius: 50,
+                      buttontext: 'Post',
                     )
                   ],
                 ),

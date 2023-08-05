@@ -44,17 +44,17 @@ class CreatNewColections extends StatelessWidget {
                           const Padding(
                             padding: EdgeInsets.symmetric(vertical: 40),
                             child: TextFiledRegister(
-                                filedHintText: 'Type name',
-                                filedWidth: 360,
+                                Text: 'Type name',
+                                Width: 360,
                                 filedIcon: Icons.abc,
-                                filedIcons: false),
+                                Icons: false),
                           ),
                           ElevatedButtons(
-                              whdth: 360,
-                              height: 60,
-                              textbutton: 'CREATE COLLECTIONs',
-                              fontSizes: 20,
-                              borederRadi: 50,
+                              buttonwidth: 360,
+                              buttonheight: 60,
+                              buttontext: 'CREATE COLLECTIONs',
+                              buttonTextFontSize: 20,
+                              buttonborederRadius: 50,
                               fanction: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) =>

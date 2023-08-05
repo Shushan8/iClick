@@ -75,10 +75,10 @@ class _VerificationState extends State<Verification> {
                   height: 30,
                 ),
                 const TextFiledRegister(
-                    filedHintText: 'Type verification code',
-                    filedWidth: 310,
+                    Text: 'Type verification code',
+                    Width: 310,
                     filedIcon: Icons.abc,
-                    filedIcons: false),
+                    Icons: false),
                 const SizedBox(
                   height: 30,
                 ),
@@ -90,17 +90,17 @@ class _VerificationState extends State<Verification> {
                   height: 30,
                 ),
                 ElevatedButtons(
-                    whdth: 310,
-                    height: 50,
-                    textbutton: 'VERIFY',
+                    buttonwidth: 310,
+                    buttonheight: 50,
+                    buttontext: 'VERIFY',
                     fanction: () {
                       
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>const SendVerification()));
                     
                     },
-                    fontSizes: 16,
-                    borederRadi: 30),
+                    buttonTextFontSize: 16,
+                    buttonborederRadius: 30),
                 const SizedBox(
                   height: 60,
                 ),

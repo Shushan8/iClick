@@ -4,45 +4,41 @@ import 'package:provider/provider.dart';
 
 class ElevatedButtons extends StatelessWidget {
   const ElevatedButtons(
-    //TODO: nuynnel stex,parametreri anunnery koshamrniyn )) u ta menak xashangi tesaketic chum asum,yes kodin ancanot mard,yeshumum kodin u pen chum haskanum cer tvac anunneric
       {super.key,
-      required this.whdth,
-      required this.height,
-      required this.textbutton,
+      required this.buttonwidth,
+      required this.buttonheight,
+      required this.buttontext,
       required this.fanction,
-      required this.fontSizes,
-      required this.borederRadi});
-  final double whdth;
-  final double height;
-  final String textbutton;
+      required this.buttonTextFontSize,
+      required this.buttonborederRadius});
+  final double buttonwidth;
+  final double buttonheight;
+  final String buttontext;
   final Function fanction;
-  final double fontSizes ;
-  final double borederRadi ;
+  final double buttonTextFontSize;
+  final double buttonborederRadius;
 
   @override
   Widget build(BuildContext context) {
     final colorProvider = Provider.of<ColorGradient>(context);
     return InkWell(
-      //TODO: tvyal depqum animastn avelord pakagcery, u kariq kiriq hse sti 
-      // onTap: fanction;
-      
-      onTap: (){
-        fanction();
+      onTap: () {
+        fanction;
       },
       child: Container(
-        width: whdth,
-        height: height,
+        width: buttonwidth,
+        height: buttonheight,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
             colorProvider.colorGradient1,
             colorProvider.colorGradient2
           ]),
-          borderRadius: BorderRadius.circular(borederRadi),
+          borderRadius: BorderRadius.circular(buttonborederRadius),
         ),
         child: Center(
             child: Text(
-          textbutton,
-          style:  TextStyle(color: Colors.white, fontSize:fontSizes ),
+          buttontext,
+          style: TextStyle(color: Colors.white, fontSize: buttonTextFontSize),
         )),
       ),
     );

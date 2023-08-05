@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 
 class TextFiledRegister extends StatelessWidget {
+  const TextFiledRegister({
+    super.key,
+    required this.Text,
+    required this.Width,
+    required this.filedIcon,
+    required this.Icons,
+  });
 
-  const TextFiledRegister({super.key, required this.filedHintText, required this.filedWidth, required this.filedIcon, required this.filedIcons,});
-  //TODO: Yes uxxaki xndrum uxxagrutyany u anunnerin ushadrutyun darcreciq,es parametrery kpoxiq
-  final String filedHintText;
-  final double filedWidth;
+  final String Text;
+  final double Width;
   final IconData filedIcon;
-  final bool filedIcons;
+  final bool Icons;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50)
-      ),
-      width: filedWidth,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
+      width: Width,
       child: TextField(
         decoration: InputDecoration(
-          hintText:filedHintText ,
-          suffixIcon: filedIcons? Icon(filedIcon) :SizedBox(),
+          hintText: Text,
+          suffixIcon: Icons ? Icon(filedIcon) : SizedBox(),
           filled: true,
           fillColor: Color.fromARGB(255, 246, 247, 249),
           disabledBorder: OutlineInputBorder(

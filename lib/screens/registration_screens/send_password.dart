@@ -76,31 +76,31 @@ class _VerificationPasswordState extends State<VerificationPassword> {
                   height: 30,
                 ),
                 const TextFiledRegister(
-                    filedHintText: 'Password',
-                    filedWidth: 310,
+                    Text: 'Password',
+                    Width: 310,
                     filedIcon: Icons.slideshow_rounded,
-                    filedIcons: true),
+                    Icons: true),
                 const SizedBox(
                   height: 20,
                 ),
                 const TextFiledRegister(
-                    filedHintText: 'Confirm Password',
-                    filedWidth: 310,
+                    Text: 'Confirm Password',
+                    Width: 310,
                     filedIcon: Icons.slideshow_rounded,
-                    filedIcons: true),
+                    Icons: true),
                 const SizedBox(
                   height: 30,
                 ),
                 ElevatedButtons(
-                    whdth: 310,
-                    height: 50,
-                    textbutton: 'SEND',
+                    buttonwidth: 310,
+                    buttonheight: 50,
+                    buttontext: 'SEND',
                     fanction: () {
                        Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>const SelectCategory ()));
                     },
-                    fontSizes: 16,
-                    borederRadi: 30),
+                    buttonTextFontSize: 16,
+                    buttonborederRadius: 30),
                 const SizedBox(
                   height: 60,
                 ),

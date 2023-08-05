@@ -76,23 +76,23 @@ class _SendVerificationState extends State<SendVerification> {
                   height: 30,
                 ),
                 const TextFiledRegister(
-                    filedHintText: 'Emali',
-                    filedWidth: 310,
+                    Text: 'Emali',
+                  Width: 310,
                     filedIcon: Icons.abc,
-                    filedIcons: false),
+                    Icons: false),
                 const SizedBox(
                   height: 75,
                 ),
                 ElevatedButtons(
-                    whdth: 310,
-                    height: 50,
-                    textbutton: 'SEND',
+                    buttonwidth: 310,
+                    buttonheight: 50,
+                    buttontext: 'SEND',
                     fanction: () {
                        Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>const VerificationPassword()));
                     },
-                    fontSizes: 16,
-                    borederRadi: 30),
+                    buttonTextFontSize: 16,
+                    buttonborederRadius: 30),
                 const SizedBox(
                   height: 60,
                 ),

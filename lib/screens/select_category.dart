@@ -83,15 +83,15 @@ class _SelectCategoryState extends State<SelectCategory> {
               ),
             ),
             ElevatedButtons(
-                whdth: 300,
-                height: 50,
-                textbutton: ' EXPLORE NOW',
+                buttonwidth: 300,
+                buttonheight: 50,
+                buttontext: ' EXPLORE NOW',
                 fanction: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const SecondScreens()));
                 },
-                fontSizes: 17,
-                borederRadi: 25),
+                buttonTextFontSize: 17,
+                buttonborederRadius: 25),
           ],
         ),
       ),
