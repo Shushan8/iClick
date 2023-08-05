@@ -4,14 +4,14 @@ import 'package:i_click/widget/discover.dart';
 import 'package:i_click/widget/navigationbar.dart';
 import 'package:i_click/widget/text_field.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({super.key});
+class DiscoverScreen extends StatefulWidget {
+  const DiscoverScreen({super.key});
 
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<DiscoverScreen> createState() => _CategoryScreenState();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
+class _CategoryScreenState extends State<DiscoverScreen> {
   final List topic = [
     'assetc/images/mj2NwYH3wBA.png',
     'assetc/images/mj2NwYH3wBA1.png',

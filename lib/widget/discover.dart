@@ -74,6 +74,6 @@ class Discover extends StatelessWidget {
             
           )
             ),
-    );;
+    );
   }
 }
