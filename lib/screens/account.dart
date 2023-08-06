@@ -186,60 +186,60 @@ class Account extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Container(
-            height: 50,
-            width: 470,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 40,
-                  width: 170,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: const Color.fromARGB(255, 243, 245, 247),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      '0 shots',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 31, 108, 171),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 40,
-                  width: 170,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      '10 Collections',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 31, 108, 171),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Image.asset(
-            'assetc/images/Group0069991.png',
-          )
+          // Container(
+          //   height: 50,
+          //   width: 470,
+          //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+          //   child: Row(
+          //     crossAxisAlignment: CrossAxisAlignment.center,
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //       Container(
+          //         height: 40,
+          //         width: 170,
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.circular(5),
+          //           color: const Color.fromARGB(255, 243, 245, 247),
+          //         ),
+          //         child: TextButton(
+          //           onPressed: () {},
+          //           child: const Text(
+          //             '0 shots',
+          //             style: TextStyle(
+          //               fontSize: 18,
+          //               fontWeight: FontWeight.bold,
+          //               color: Color.fromARGB(255, 31, 108, 171),
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //       Container(
+          //         height: 40,
+          //         width: 170,
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.circular(5),
+          //         ),
+          //         child: TextButton(
+          //           onPressed: () {},
+          //           child: const Text(
+          //             '10 Collections',
+          //             style: TextStyle(
+          //               fontSize: 18,
+          //               fontWeight: FontWeight.bold,
+          //               color: Color.fromARGB(255, 31, 108, 171),
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // const SizedBox(
+          //   height: 30,
+          // ),
+          // Image.asset(
+          //   'assetc/images/Group0069991.png',
+          // )
         ],
       ),
       bottomNavigationBar: const NavigationBarScreen(),
