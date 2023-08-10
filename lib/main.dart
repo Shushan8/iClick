@@ -1,10 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/account.dart';
 
-import 'package:i_click/screens/registration_screens/welcome_screen.dart';
+// import 'package:i_click/screens/registration_screens/welcome_screen.dart';
 
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
+import 'package:i_click/screens/registration_screens/welcome_screen.dart';
 
 import 'package:provider/provider.dart';
 

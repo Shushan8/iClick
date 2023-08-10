@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/class/auth_service.dart';
 import 'package:i_click/screens/registration_screens/sign_up_screen.dart';
 import 'package:i_click/screens/registration_screens/verificationscreen.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
@@ -101,22 +102,30 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.grey),
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.grey),
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.grey),
+                      InkWell(
+                        onTap: () {
+                          AuthService().SignInWithGoogle();
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.grey),
+                        ),
                       )
                     ],
                   ),
@@ -134,8 +143,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       children: [
                         const Text(
                           'Don\'t have account?',
-                          style:
-                              TextStyle(fontSize: 15, color: Colors.grey),
+                          style: TextStyle(fontSize: 15, color: Colors.grey),
                         ),
                         const SizedBox(
                           width: 5,

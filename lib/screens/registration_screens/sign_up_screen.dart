@@ -47,7 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               const TextFiledRegister(
                 filedWidth: 350,
-                filedHintText: 'Email',
+                filedHintText: 'Password',
                 filedIcon: Icons.abc,
                 filedIcons: false,
               ),
@@ -71,10 +71,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 50,
                   textbutton: 'SIGN IN',
                   fanction: () {
-                    
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>const VerificationScreen()));
-                
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const VerificationScreen()));
                   },
                   fontSizes: 16,
                   borederRadi: 30),
@@ -84,7 +82,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: ((context) =>const SignUpScreen()),),);
+                    MaterialPageRoute(
+                      builder: ((context) => const SignUpScreen()),
+                    ),
+                  );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
