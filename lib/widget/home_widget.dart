@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:i_click/widget/icons.dart';
 import 'package:i_click/widget/imga_name.dart';
 
 class HomePost extends StatelessWidget {
@@ -7,15 +9,14 @@ class HomePost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          height: 360,
+      height: 360,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.white),
+          borderRadius: BorderRadius.circular(20), color: Colors.white),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -27,7 +28,7 @@ class HomePost extends StatelessWidget {
               ],
             ),
           ),
-          Image.asset('assetc/images/222.png'),
+          Image.asset('assetc/images/images1.png'),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Row(
@@ -45,10 +46,18 @@ class HomePost extends StatelessWidget {
                       Row(
                         children: [
                           Text('20'),
-                          Icon(
-                            Icons.chat_outlined,
-                            color: Colors.blueAccent,
-                          ),
+                          // SvgPicture.asset(
+                          //   iconChat,
+                          //   height: 200,
+                          //   width: 200,
+                          // )
+                          //                        IconButton(icon: SvgPicture.asset(
+
+                          // ),onPressed: () {},)
+                          // Icon(
+                          //   Icons.chat_outlined,
+                          //   color: Colors.blueAccent,
+                          // ),
                         ],
                       ),
                       Row(
