@@ -14,6 +14,7 @@ class SendVerificationScreen extends StatefulWidget {
 class _SendVerificationScreenState extends State<SendVerificationScreen> {
   @override
   Widget build(BuildContext context) {
+    final emailContr = TextEditingController();
     return Scaffold(
         body: Column(children: [
       Stack(children: <Widget>[
@@ -75,7 +76,8 @@ class _SendVerificationScreenState extends State<SendVerificationScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                const TextFiledRegister(
+                TextFiledRegister(
+                    controller: emailContr,
                     filedHintText: 'Emali',
                     filedWidth: 310,
                     filedIcon: Icons.abc,
@@ -88,8 +90,9 @@ class _SendVerificationScreenState extends State<SendVerificationScreen> {
                     height: 50,
                     textbutton: 'SEND',
                     fanction: () {
-                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const VerificationPasswordScreen()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              const VerificationPasswordScreen()));
                     },
                     fontSizes: 16,
                     borederRadi: 30),

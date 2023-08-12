@@ -8,12 +8,17 @@ class VerificationPasswordScreen extends StatefulWidget {
   const VerificationPasswordScreen({super.key});
 
   @override
-  State<VerificationPasswordScreen> createState() => _VerificationPasswordScreenState();
+  State<VerificationPasswordScreen> createState() =>
+      _VerificationPasswordScreenState();
 }
 
-class _VerificationPasswordScreenState extends State<VerificationPasswordScreen> {
+class _VerificationPasswordScreenState
+    extends State<VerificationPasswordScreen> {
   @override
   Widget build(BuildContext context) {
+    final passwordController = TextEditingController();
+    final password1Controller = TextEditingController();
+
     return Scaffold(
         body: Column(children: [
       Stack(children: <Widget>[
@@ -75,7 +80,8 @@ class _VerificationPasswordScreenState extends State<VerificationPasswordScreen>
                 const SizedBox(
                   height: 30,
                 ),
-                const TextFiledRegister(
+                TextFiledRegister(
+                    controller: passwordController,
                     filedHintText: 'Password',
                     filedWidth: 310,
                     filedIcon: Icons.slideshow_rounded,
@@ -83,7 +89,8 @@ class _VerificationPasswordScreenState extends State<VerificationPasswordScreen>
                 const SizedBox(
                   height: 20,
                 ),
-                const TextFiledRegister(
+                TextFiledRegister(
+                    controller: password1Controller,
                     filedHintText: 'Confirm Password',
                     filedWidth: 310,
                     filedIcon: Icons.slideshow_rounded,
@@ -96,8 +103,8 @@ class _VerificationPasswordScreenState extends State<VerificationPasswordScreen>
                     height: 50,
                     textbutton: 'SEND',
                     fanction: () {
-                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const SelectCategory ()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const SelectCategory()));
                     },
                     fontSizes: 16,
                     borederRadi: 30),

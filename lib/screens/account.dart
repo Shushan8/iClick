@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:i_click/widget/navigationbar.dart';
 
-class Account extends StatelessWidget {
+class Account extends StatefulWidget {
   const Account({super.key});
+
+  @override
+  State<Account> createState() => _AccountState();
+}
+
+class _AccountState extends State<Account> {
+  List<String> items = [
+    '0 shots',
+    '10 Collections',
+  ];
+  List<IconData> icons = [Icons.home, Icons.search];
+  int current = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -184,61 +197,74 @@ class Account extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: 50,
-            width: 470,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 40,
-                  width: 170,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: const Color.fromARGB(255, 243, 245, 247),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      '0 shots',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 31, 108, 171),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 40,
-                  width: 170,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      '10 Collections',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 31, 108, 171),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
             height: 30,
           ),
-          Image.asset(
-            'assetc/images/Group0069991.png',
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 45,
+                width: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: const Color.fromARGB(255, 243, 245, 247),
+                ),
+                child: SizedBox(
+                  height: 60,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: items.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (ctx, index) {
+                      return InkWell(
+                        onTap: () {
+                          setState(() {
+                            current = index;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          margin: const EdgeInsets.all(5),
+                          width: 140,
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: current == index
+                                ? const Color.fromRGBO(241, 241, 254, 1)
+                                : Colors.white54,
+                            borderRadius: current == index
+                                ? BorderRadius.circular(10)
+                                : BorderRadius.circular(5),
+                          ),
+                          child: Center(
+                            child: Text(
+                              items[index],
+                              style: GoogleFonts.laila(
+                                  fontWeight: FontWeight.bold,
+                                  color: current == index
+                                      ? const Color.fromRGBO(136, 139, 244, 1)
+                                      : Colors.grey),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 30),
+            child: Column(
+              children: [
+                Icon(
+                  icons[current],
+                  size: 150,
+                )
+              ],
+            ),
           )
         ],
       ),

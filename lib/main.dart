@@ -1,11 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import 'package:i_click/screens/registration_screens/welcome_screen.dart';
-
+import 'package:i_click/provider/sign_in_provider.dart';
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
-
+import 'package:i_click/screens/registration_screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 
 Future main() async {
@@ -29,6 +27,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: ((context) => SearchProvider()),
+        ),
+        ChangeNotifierProvider(
+          create: ((context) => SignInProvider()),
         ),
       ],
       child: const MaterialApp(

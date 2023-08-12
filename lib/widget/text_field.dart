@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextFields extends StatelessWidget {
   const TextFields({super.key, required this.icon});
-  final bool icon ;
+  final bool icon;
 
   @override
   Widget build(BuildContext context) {
@@ -15,37 +15,38 @@ class TextFields extends StatelessWidget {
             width: 300,
             height: 40,
             child: TextField(
-              onTap: () {
-                
-              },
+              onTap: () {},
               decoration: InputDecoration(
-              
-                prefixIcon: const Icon(Icons.search,color: Colors.blue,),
+                prefixIcon: const Icon(
+                  Icons.search,
+                  color: Colors.blue,
+                ),
                 hintText: 'Search',
                 filled: true,
-                fillColor:const Color.fromARGB(255, 243, 245, 247),
+                fillColor: const Color.fromARGB(255, 243, 245, 247),
                 disabledBorder: OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: Color.fromARGB(255, 243, 245, 247)),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 243, 245, 247)),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: Color.fromARGB(255, 243, 245, 247)),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 243, 245, 247)),
                   borderRadius: BorderRadius.circular(50),
                 ),
-        
               ),
             ),
           ),
         ),
-       icon?  Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Color.fromARGB(255, 243, 245, 247)),
-            child: Icon(Icons.send)): Container()
+        icon
+            ? Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: const Color.fromARGB(255, 243, 245, 247)),
+                child: const Icon(Icons.send))
+            : Container()
       ],
     );
   }
