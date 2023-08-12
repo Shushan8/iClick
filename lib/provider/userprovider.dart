@@ -160,25 +160,62 @@ class SearchProvider with ChangeNotifier {
         searcCartsText2: '',
         searcCardsTextTru: true,
         searcCardsTextFals: false,
-        searcCardsImages: 'assetc/images/mj2NwYH3wBA.png'),
+        searcCardsImages: 'assetc/images/mj2NwYH3wBA.png',
+        searcCardsText1Fals:false),
     Searc(
         searcCartsText: '',
         searcCartsText2: 'IILUSTRATION',
         searcCardsTextTru: false,
         searcCardsTextFals: true,
-        searcCardsImages: 'assetc/images/CdmpFw9vrX01.png'),
+        searcCardsImages: 'assetc/images/CdmpFw9vrX01.png',
+        searcCardsText1Fals: false,
+        ),
     Searc(
         searcCartsText: 'DESIGN',
         searcCartsText2: '',
         searcCardsTextTru: true,
         searcCardsTextFals: false,
-        searcCardsImages: 'assetc/images/CdmpFw9vrX02.png'),
+        searcCardsImages: 'assetc/images/CdmpFw9vrX02.png',searcCardsText1Fals: false,),
     Searc(
         searcCartsText: '',
         searcCartsText2: 'MAKING VIDEO',
         searcCardsTextTru: false,
         searcCardsTextFals: true,
-        searcCardsImages: 'assetc/images/CdmpFw9vrX03.png'),
+        searcCardsImages: 'assetc/images/CdmpFw9vrX03.png',searcCardsText1Fals: false,),
+
+   
+  ];
+}
+class Collect with ChangeNotifier {
+  final collect = [
+    Searc(
+        searcCartsText: 'PHOTOGRAPHY',
+        searcCartsText2: '',
+        searcCardsTextTru: true,
+        searcCardsTextFals: false,
+        searcCardsImages: 'assetc/images/mj2NwYH3wBA.png',
+        searcCardsText1Fals:false),
+    Searc(
+        searcCartsText: '',
+        searcCartsText2: 'IILUSTRATION',
+        searcCardsTextTru: false,
+        searcCardsTextFals: true,
+        searcCardsImages: 'assetc/images/CdmpFw9vrX01.png',
+        searcCardsText1Fals: false,
+        ),
+    Searc(
+        searcCartsText: 'DESIGN',
+        searcCartsText2: '',
+        searcCardsTextTru: true,
+        searcCardsTextFals: false,
+        searcCardsImages: 'assetc/images/CdmpFw9vrX02.png',searcCardsText1Fals: false,),
+    Searc(
+        searcCartsText: '',
+        searcCartsText2: 'MAKING VIDEO',
+        searcCardsTextTru: false,
+        searcCardsTextFals: true,
+        searcCardsImages: 'assetc/images/CdmpFw9vrX03.png',searcCardsText1Fals: false,),
+
    
   ];
 }

@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:i_click/model/comments.dart';
+import 'package:i_click/model/post.dart';
 import 'package:i_click/screens/new_colection.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/widget/coments.dart';
@@ -7,12 +9,21 @@ import 'package:i_click/widget/iconka.dart';
 import 'package:i_click/widget/imga_name.dart';
 import 'package:provider/provider.dart';
 
-class Post extends StatelessWidget {
-  const Post({super.key});
+class PostScreen extends StatelessWidget {
+  const PostScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Post post = Post(postid: '1', 
+    postUserImageUrl: 'assetc/images/msnyz9L6gs4.jpg',
+    postName: 'postName', 
+    postImageUrl: 'postImageUrl', 
+    postTime: DateTime.now(), 
+    postFavoriteNumber: 1,
+    );
+    int listLength = post.comments.length;
     final userProvider = Provider.of<UserProvider>(context);
+    final commentsController = TextEditingController();
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -60,7 +71,7 @@ class Post extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
+                     Padding(
                       padding: EdgeInsets.only(left: 15, top: 20, right: 15),
                       child: Column(
                         children: [
@@ -68,26 +79,36 @@ class Post extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ImageName(),
-                              Text(
-                                '1 hour ago',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 17),
+                              Row(
+                                children: [
+                                  Text(
+                                    post.postid,//sxalaaa
+                                    style:
+                                        TextStyle(color: Colors.grey, fontSize: 17),
+                                  ),Text(
+                                    ' hour ago',
+                                    style:
+                                        TextStyle(color: Colors.grey, fontSize: 17),
+                                  ),
+                                ],
                               )
                             ],
                           ),
                         ],
                       ),
                     ),
-                   const Padding(
+                    // Image(
+                    //     image: AssetImage(
+                    //       post.postImageUrl
+                    //     ),
+                    Padding(
                       padding:  EdgeInsets.symmetric(vertical: 10),
-                      child:  Image(
-                        image: AssetImage(
-                          'assetc/images/msnyz9L6gs4.jpg',
-                        ),
-                        height: 280,
-                        fit: BoxFit.contain,
+                      child:  Image.asset(
+                         'assetc/images/msnyz9L6gs4.jpg',height: 280,
+                        fit: BoxFit.contain,),
+                        
                       ),
-                    ),
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -107,10 +128,10 @@ class Post extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                         const   Padding(
+                            Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
-                                '20',
+                                '$listLength',
                                 style:
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
@@ -124,7 +145,7 @@ class Post extends StatelessWidget {
                          const   Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
-                                '125',
+                                'post.postFavoriteNumber',
                                 style:
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
@@ -200,12 +221,20 @@ class Post extends StatelessWidget {
                   Container(
                     width: 200,
                     child: TextFormField(
+                      controller: commentsController,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Add a comment",
                       ),
                     ),
                   ),
+                  ElevatedButton(onPressed: (){
+                    post.comments.add(Comments(commentsUserImageUrl: 'commentsUserImageUrl', 
+                    commentsName: 'commentsName', 
+                    commentsText: commentsController.text, 
+                    commentsTime: DateTime.now(), 
+                    commentsFavoriteNumber: 8));
+                  }, child: const Text('add')),
                 ],
               ),
             )

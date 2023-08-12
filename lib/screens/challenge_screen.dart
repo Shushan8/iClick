@@ -53,7 +53,7 @@ class ChallengeScreen extends StatelessWidget {
                 InkWell(
                   onTap: (){
                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Post()));
+                        builder: (context) => const PostScreen()));
                   },
                   child: Padding(
                     padding:

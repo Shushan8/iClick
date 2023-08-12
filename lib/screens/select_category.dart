@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/screens/home.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
+import 'package:i_click/widget/searc_cards.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class SelectCategory extends StatefulWidget {
@@ -19,6 +22,7 @@ class _SelectCategoryState extends State<SelectCategory> {
   ];
   @override
   Widget build(BuildContext context) {
+    final collescts = Provider.of<Collect>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -54,18 +58,33 @@ class _SelectCategoryState extends State<SelectCategory> {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
-              height: 430,
-              width: double.infinity,
-              child: GridView.builder(
-                itemCount: img.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 2 / 2,
-                ),
-                itemBuilder: (context, index) => Image.asset(
-                  img[index],
-                ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 430,
+                width: double.infinity,
+                child: GridView.builder(
+                  itemCount: img.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 2 / 2,
+                    mainAxisExtent: 180,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10
+                  ),
+                  itemBuilder: (context, index) => SearchCards(
+                              searcCardsImages:
+                                  collescts.collect[index].searcCardsImages,
+                              searcCartsText:
+                                  collescts.collect[index].searcCartsText,
+                              searcCartsText2:
+                                  collescts.collect[index].searcCartsText2,
+                              searcCardsTextFals:
+                                  collescts.collect[index].searcCardsTextFals,
+                              searcCardsTextTru:
+                                  collescts.collect[index].searcCardsTextTru,
+                                   searcCardsText1Fals: collescts.collect[index].searcCardsText1Fals,
+                            ),),
               ),
             ),
             Padding(

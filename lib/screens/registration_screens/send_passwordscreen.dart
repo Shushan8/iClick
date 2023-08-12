@@ -5,6 +5,7 @@ import 'package:i_click/widget/text_filed_regist.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class VerificationPasswordScreen extends StatefulWidget {
+  
   const VerificationPasswordScreen({super.key});
 
   @override
@@ -14,6 +15,7 @@ class VerificationPasswordScreen extends StatefulWidget {
 class _VerificationPasswordScreenState extends State<VerificationPasswordScreen> {
   @override
   Widget build(BuildContext context) {
+    final unicId = DateTime.now().microsecondsSinceEpoch;
     return Scaffold(
         body: Column(children: [
       Stack(children: <Widget>[

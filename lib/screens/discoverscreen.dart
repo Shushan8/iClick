@@ -8,20 +8,22 @@ class DiscoverScreen extends StatefulWidget {
   const DiscoverScreen({super.key});
 
   @override
-  State<DiscoverScreen> createState() => _CategoryScreenState();
+  State<DiscoverScreen> createState() => _DiscoverScreenState();
 }
 
-class _CategoryScreenState extends State<DiscoverScreen> {
+class _DiscoverScreenState extends State<DiscoverScreen> {
   final List topic = [
     'assetc/images/mj2NwYH3wBA.png',
     'assetc/images/mj2NwYH3wBA1.png',
     'assetc/images/mj2NwYH3wBA1.png',
   ];
+
   final List controllerimage = [
     'assetc/images/controllerimagess.png',
     'assetc/images/controllerimagess.png',
     'assetc/images/controllerimagess.png',
   ];
+
   final List controllertext = [
     'PORTRAI PHOTOGRAPHY',
     'MUSIC VIDEO',

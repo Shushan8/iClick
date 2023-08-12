@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/email.dart';
 import 'package:i_click/screens/registration_screens/sign_up_screen.dart';
 import 'package:i_click/screens/registration_screens/verificationscreen.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
@@ -101,12 +102,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.grey),
+                      InkWell(
+                        child: Container(
+                        
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.grey),
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
