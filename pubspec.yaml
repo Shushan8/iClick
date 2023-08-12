@@ -45,6 +45,10 @@ dependencies:
   firebase_auth: ^4.7.2
   json_serializable: ^6.7.1
   json_annotation: ^4.8.1
+  google_sign_in: ^6.1.4
+  google_fonts: ^5.1.0
+  flutter_svg: ^2.0.7
+  build_runner: ^2.4.6
   
 
 
@@ -126,6 +130,9 @@ flutter:
     - assetc/images/Group8012.png
     - assetc/images/Avatar.png
     - assetc/images/Group0069991.png
+    - assetc/images/222.png
+    - assetc/images/111.png
+    # - assetc/icons/Chat.svg
 
   #   - images/a_dot_ham.jpeg
 

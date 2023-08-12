@@ -8,6 +8,7 @@ class CreatNewColections extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final nameController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Column(
@@ -41,9 +42,10 @@ class CreatNewColections extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Padding(
+                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 40),
                             child: TextFiledRegister(
+                              controller: nameController,
                                 filedHintText: 'Type name',
                                 filedWidth: 360,
                                 filedIcon: Icons.abc,
@@ -71,7 +73,8 @@ class CreatNewColections extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                       border: Border.all(
-                          width: 1, color:const Color.fromARGB(172, 194, 192, 192)),
+                          width: 1,
+                          color: const Color.fromARGB(172, 194, 192, 192)),
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white),
                   child: InkWell(
