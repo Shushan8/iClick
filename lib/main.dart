@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:i_click/provider/sign_in_provider.dart';
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
-import 'package:i_click/screens/registration_screens/welcome_screen.dart';
+import 'package:i_click/screens/account.dart';
+import 'package:i_click/screens/home.dart';
 import 'package:provider/provider.dart';
 
 Future main() async {
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: WelcomeScreen(),
+        home: Account(),
       ),
     );
   }

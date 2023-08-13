@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:i_click/widget/icons.dart';
 import 'package:i_click/widget/imga_name.dart';
 
 class HomePost extends StatelessWidget {
@@ -29,14 +28,15 @@ class HomePost extends StatelessWidget {
             ),
           ),
           Image.asset('assetc/images/images1.png'),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  Icons.add_circle_outline_outlined,
-                  color: Colors.blueAccent,
+                SvgPicture.asset(
+                  'assetc/icons/plus.svg',
+                  width: 20,
+                  height: 20,
                 ),
                 SizedBox(
                   width: 110,
@@ -46,27 +46,21 @@ class HomePost extends StatelessWidget {
                       Row(
                         children: [
                           Text('20'),
-                          // SvgPicture.asset(
-                          //   iconChat,
-                          //   height: 200,
-                          //   width: 200,
-                          // )
-                          //                        IconButton(icon: SvgPicture.asset(
-
-                          // ),onPressed: () {},)
-                          // Icon(
-                          //   Icons.chat_outlined,
-                          //   color: Colors.blueAccent,
-                          // ),
+                          SvgPicture.asset(
+                            'assetc/icons/Chat.svg',
+                            width: 20,
+                            height: 20,
+                          ),
                         ],
                       ),
                       Row(
                         children: [
                           Text('125'),
-                          Icon(
-                            Icons.favorite_border,
-                            color: Colors.blueAccent,
-                          )
+                          SvgPicture.asset(
+                            'assetc/icons/heart.svg',
+                            width: 20,
+                            height: 20,
+                          ),
                         ],
                       ),
                     ],

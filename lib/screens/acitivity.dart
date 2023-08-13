@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:i_click/screens/messeges.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/widget/coments.dart';
+import 'package:i_click/widget/navigationbar.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -12,7 +14,6 @@ class Activity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(
@@ -25,22 +26,22 @@ class Activity extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                     const Text(
+                      const Text(
                         'Activity',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 22),
                       ),
                       GradientText(
                         '(03)',
-                        style:const TextStyle(
-                          fontSize: 22,fontWeight: FontWeight.bold,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
                         ),
-                        colors:const [
+                        colors: const [
                           Color.fromARGB(255, 81, 81, 198),
                           Color.fromARGB(255, 136, 139, 244)
                         ],
                       ),
-                     
                     ],
                   ),
                   Row(
@@ -48,12 +49,13 @@ class Activity extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) =>const Message()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const Message()));
                         },
-                        child:const Icon(
-                          Icons.backup_outlined,
-                          size: 35,
+                        child: SvgPicture.asset(
+                          'assetc/icons/Setting.svg',
+                          width: 24,
+                          height: 24,
                         ),
                       )
                     ],
@@ -78,13 +80,14 @@ class Activity extends StatelessWidget {
                                     childAspectRatio: 4 / 1,
                                     mainAxisSpacing: 20,
                                     mainAxisExtent: 120),
-                            itemBuilder: (context, index) =>  Coments(
+                            itemBuilder: (context, index) => Coments(
                                   imageUrl: userProvider.user[index].imageUrl,
                                   texts: userProvider.user[index].texts,
                                   coments: userProvider.user[index].coments,
                                   iconn: userProvider.user[index].iconn,
                                   activity: userProvider.user[index].activity,
-                                  messagetext:userProvider.user[index].messagetext ,
+                                  messagetext:
+                                      userProvider.user[index].messagetext,
                                   like: userProvider.user[index].like,
                                   imageIcon: userProvider.user[index].imageIcon,
                                   color: false,
@@ -93,7 +96,6 @@ class Activity extends StatelessWidget {
                                 )),
                       ),
                     ),
-                   
                   ],
                 ),
               ),
@@ -101,6 +103,7 @@ class Activity extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const NavigationBarScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TextFields extends StatelessWidget {
   const TextFields({super.key, required this.icon});
@@ -17,10 +18,15 @@ class TextFields extends StatelessWidget {
             child: TextField(
               onTap: () {},
               decoration: InputDecoration(
-                prefixIcon: const Icon(
-                  Icons.search,
-                  color: Colors.blue,
+                prefixIcon: SvgPicture.asset(
+                  'assetc/icons/Search.svg',
+                  width: 10,
+                  height: 10,
                 ),
+                // prefixIcon: const Icon(
+                //   Icons.search,
+                //   color: Colors.blue,
+                // ),
                 hintText: 'Search',
                 filled: true,
                 fillColor: const Color.fromARGB(255, 243, 245, 247),
@@ -45,7 +51,12 @@ class TextFields extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: const Color.fromARGB(255, 243, 245, 247)),
-                child: const Icon(Icons.send))
+                child: SvgPicture.asset(
+                  'assetc/icons/send.svg',
+                  width: 20,
+                  height: 23,
+                ),
+              )
             : Container()
       ],
     );

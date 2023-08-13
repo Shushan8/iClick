@@ -15,178 +15,180 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     final authService = FirebaseAuth.instance;
     // final signInProvider = Provider.of<SignInProvider>(context);
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              const Image(
-                  image: AssetImage(
-                    'assetc/images/Dark Background.png',
-                  ),
-                  fit: BoxFit.contain,
-                  height: 890),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 35),
-                child: Container(
-                  height: 105,
-                  width: 350,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: const Color.fromRGBO(255, 255, 255, 0.1),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset('assetc/images/20.png'),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
-                        child: Text(
-                          'thanphamdhbk@gmail.com',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color.fromRGBO(192, 192, 192, 1),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
+              children: [
+                const Image(
+                    image: AssetImage(
+                      'assetc/images/Dark Background.png',
+                    ),
+                    fit: BoxFit.contain,
+                    height: 890),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 35),
+                  child: Container(
+                    height: 105,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: const Color.fromRGBO(255, 255, 255, 0.1),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset('assetc/images/20.png'),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 30),
+                          child: Text(
+                            'thanphamdhbk@gmail.com',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Color.fromRGBO(192, 192, 192, 1),
+                            ),
                           ),
                         ),
+                      ],
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 150, vertical: 55),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        'Bruno Pham',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 150, vertical: 55),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      'Bruno Pham',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ],
+                const Padding(
+                  padding: EdgeInsets.all(51.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(
+                        Icons.edit_square,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(51.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Icon(
-                      Icons.edit_square,
-                      color: Colors.white,
-                    ),
-                  ],
+                const ContainerWidget(
+                  text: 'Email',
                 ),
-              ),
-              const ContainerWidget(
-                text: 'Email',
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 65),
-                child: ContainerWidget(
-                  text: 'Instagram',
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 65),
+                  child: ContainerWidget(
+                    text: 'Instagram',
+                  ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 130),
-                child: ContainerWidget(
-                  text: 'Twitter',
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 130),
+                  child: ContainerWidget(
+                    text: 'Twitter',
+                  ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 195),
-                child: ContainerWidget(
-                  text: 'Website',
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 195),
+                  child: ContainerWidget(
+                    text: 'Website',
+                  ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 260),
-                child: ContainerWidget(
-                  text: 'Paypal',
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 260),
+                  child: ContainerWidget(
+                    text: 'Paypal',
+                  ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 325),
-                child: ContainerWidget(
-                  text: 'Change password',
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 325),
+                  child: ContainerWidget(
+                    text: 'Change password',
+                  ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 390),
-                child: ContainerWidget(
-                  text: 'About i.click',
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 390),
+                  child: ContainerWidget(
+                    text: 'About i.click',
+                  ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 455),
-                child: ContainerWidget(
-                  text: 'Terms & privacy',
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 455),
+                  child: ContainerWidget(
+                    text: 'Terms & privacy',
+                  ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const EditProfile()));
-                },
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 690),
-                  child: Container(
-                    height: 42,
-                    width: 130,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white),
-                    child: const Center(
-                      child: Text(
-                        'Log out',
-                        style: TextStyle(
-                          fontSize: 16,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const EditProfile()));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 690),
+                    child: Container(
+                      height: 42,
+                      width: 130,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white),
+                      child: const Center(
+                        child: Text(
+                          'Log out',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 699),
-                child: InkWell(
-                  onTap: () {
-                    authService.signOut();
-                  },
-                  child: const Icon(Icons.logout_outlined),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 699),
+                  child: InkWell(
+                    onTap: () {
+                      authService.signOut();
+                    },
+                    child: const Icon(Icons.logout_outlined),
+                  ),
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 200, horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Image.asset('assetc/images/Home 1.png'),
-                  ],
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 200, horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Image.asset('assetc/images/Home 1.png'),
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 175,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 175,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Image.asset('assetc/images/Home 2.png'),
+                    ],
+                  ),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Image.asset('assetc/images/Home 2.png'),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
