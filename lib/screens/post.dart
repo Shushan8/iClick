@@ -9,17 +9,24 @@ import 'package:i_click/widget/iconka.dart';
 import 'package:i_click/widget/imga_name.dart';
 import 'package:provider/provider.dart';
 
-class PostScreen extends StatelessWidget {
-  const PostScreen({super.key});
+class PostScreen extends StatefulWidget {
+  final Post post;
+  const PostScreen({super.key, required this.post});
 
+  @override
+  State<PostScreen> createState() => _PostScreenState();
+}
+
+class _PostScreenState extends State<PostScreen> {
   @override
   Widget build(BuildContext context) {
     Post post = Post(postid: '1', 
-    postUserImageUrl: 'assetc/images/msnyz9L6gs4.jpg',
-    postName: 'postName', 
+    //postUserImageUrl: 'assetc/images/msnyz9L6gs4.jpg',
+    postTitle: 'postName', 
+    postDeccription: '',
     postImageUrl: 'postImageUrl', 
     postTime: DateTime.now(), 
-    postFavoriteNumber: 1,
+    //postFavoriteNumber: 1,
     );
     int listLength = post.comments.length;
     final userProvider = Provider.of<UserProvider>(context);
@@ -103,9 +110,15 @@ class PostScreen extends StatelessWidget {
                     //     ),
                     Padding(
                       padding:  EdgeInsets.symmetric(vertical: 10),
-                      child:  Image.asset(
-                         'assetc/images/msnyz9L6gs4.jpg',height: 280,
-                        fit: BoxFit.contain,),
+                      child:  InkWell(
+                        onTap: () {
+                          
+                        },
+                        child: Image.network(
+                           widget.post.postImageUrl,
+                           height: 280,
+                          fit: BoxFit.contain,),
+                      ),
                         
                       ),
                     

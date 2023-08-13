@@ -1,20 +1,27 @@
 import 'package:i_click/model/comments.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'post.g.dart';
 
+@JsonSerializable()
 class Post {
   final String postid;
-  final String postUserImageUrl;
-  final String postName;
+  final String postTitle;
   final String postImageUrl;
+  final String postDeccription;
   final DateTime postTime;
   final List<Comments> comments = [];
-  final double postFavoriteNumber;
+  // final double postFavoriteNumber;
 
   Post(
       {required this.postid,
-      required this.postUserImageUrl,
-      required this.postName,
+      required this.postTitle,
       required this.postImageUrl,
+      required this.postDeccription,
       required this.postTime,
-      required this.postFavoriteNumber,
+      // required this.postFavoriteNumber,
       });
+       factory Post.fromJson(Map<String, dynamic> json) =>
+      _$PostFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PostToJson(this);
 }

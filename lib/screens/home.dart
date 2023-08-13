@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_click/screens/discoverscreen.dart';
+import 'package:i_click/screens/popular.dart';
 import 'package:i_click/widget/home_widget.dart';
 import 'package:i_click/widget/navigationbar.dart';
 import 'package:i_click/widget/text_field.dart';
@@ -19,8 +20,14 @@ class _HomeState extends State<Home> {
     'Folowing',
   ];
   List post = [
-    HomePost(),
+    
+     
+      Container(
+        width: 400,
+        height: 500,
+        child: Popular()),
     Container(
+
       height: 100,
       width: 100,
       decoration: BoxDecoration(
@@ -37,18 +44,18 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 110,
-            child: TextFields(
-              icon: true,
+    return Scaffold
+    (
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 110,
+              child: TextFields(
+                icon: true,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
@@ -103,19 +110,18 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 30),
-            child: Column(
-              children: [post[current]],
+            Container(
+              margin: const EdgeInsets.only(top: 30),
+              child: Column(
+                children: [post[current]],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+            bottomNavigationBar: const NavigationBarScreen(),
+    
     );
-//       bottomNavigationBar: const NavigationBarScreen(),
-//     );
+
   }
 }
-//   }
-// }
