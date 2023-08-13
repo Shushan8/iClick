@@ -58,6 +58,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 searcProvider.search[index].searcCardsTextFals,
                             searcCardsTextTru:
                                 searcProvider.search[index].searcCardsTextTru,
+                                searcCardsText1Fals: searcProvider.search[index].searcCardsText1Fals,
                           ),
                     )),
               ),

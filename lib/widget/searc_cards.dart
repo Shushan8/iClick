@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class SearchCards extends StatelessWidget {
-  const SearchCards(
+  const     SearchCards(
       {super.key,
       required this.searcCartsText,
       required this.searcCartsText2,
       required this.searcCardsTextTru,
       required this.searcCardsTextFals,
-      required this.searcCardsImages});
+      required this.searcCardsImages, required this.searcCardsText1Fals});
   final String searcCartsText;
   final String searcCartsText2;
   final bool searcCardsTextTru;
   final bool searcCardsTextFals;
   final String searcCardsImages;
+   final bool searcCardsText1Fals;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,15 @@ class SearchCards extends StatelessWidget {
                       )
                     : Container(),
                 searcCardsTextFals
+                    ? Text(
+                        searcCartsText2,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      )
+                    : Container(),
+                     searcCardsText1Fals
                     ? Text(
                         searcCartsText2,
                         style: TextStyle(

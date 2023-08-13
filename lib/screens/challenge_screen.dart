@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/screens/home.dart';
 import 'package:i_click/screens/post.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -53,7 +54,7 @@ class ChallengeScreen extends StatelessWidget {
                 InkWell(
                   onTap: (){
                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Post()));
+                        builder: (context) => const Home()));
                   },
                   child: Padding(
                     padding:

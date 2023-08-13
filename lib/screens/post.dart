@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+// <<<<<<< movsisyan2_branch_
 import 'package:flutter_svg/flutter_svg.dart';
+// =======
+import 'package:i_click/model/comments.dart';
+import 'package:i_click/model/post.dart';
+// >>>>>>> master
 import 'package:i_click/screens/new_colection.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/widget/coments.dart';
@@ -7,12 +12,28 @@ import 'package:i_click/widget/iconka.dart';
 import 'package:i_click/widget/imga_name.dart';
 import 'package:provider/provider.dart';
 
-class Post extends StatelessWidget {
-  const Post({super.key});
+class PostScreen extends StatefulWidget {
+  final Post post;
+  const PostScreen({super.key, required this.post});
 
   @override
+  State<PostScreen> createState() => _PostScreenState();
+}
+
+class _PostScreenState extends State<PostScreen> {
+  @override
   Widget build(BuildContext context) {
+    Post post = Post(postid: '1', 
+    //postUserImageUrl: 'assetc/images/msnyz9L6gs4.jpg',
+    postTitle: 'postName', 
+    postDeccription: '',
+    postImageUrl: 'postImageUrl', 
+    postTime: DateTime.now(), 
+    //postFavoriteNumber: 1,
+    );
+    int listLength = post.comments.length;
     final userProvider = Provider.of<UserProvider>(context);
+    final commentsController = TextEditingController();
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -64,7 +85,7 @@ class Post extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
+                     Padding(
                       padding: EdgeInsets.only(left: 15, top: 20, right: 15),
                       child: Column(
                         children: [
@@ -72,26 +93,53 @@ class Post extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ImageName(),
-                              Text(
-                                '1 hour ago',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 17),
+                              Row(
+                                children: [
+                                  Text(
+                                    post.postid,//sxalaaa
+                                    style:
+                                        TextStyle(color: Colors.grey, fontSize: 17),
+                                  ),Text(
+                                    ' hour ago',
+                                    style:
+                                        TextStyle(color: Colors.grey, fontSize: 17),
+                                  ),
+                                ],
                               )
                             ],
                           ),
                         ],
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Image(
-                        image: AssetImage(
-                          'assetc/images/msnyz9L6gs4.jpg',
-                        ),
-                        height: 280,
-                        fit: BoxFit.contain,
+// <<<<<<< movsisyan2_branch_
+//                     const Padding(
+//                       padding: EdgeInsets.symmetric(vertical: 10),
+//                       child: Image(
+//                         image: AssetImage(
+//                           'assetc/images/msnyz9L6gs4.jpg',
+//                         ),
+//                         height: 280,
+//                         fit: BoxFit.contain,
+// =======
+                    // Image(
+                    //     image: AssetImage(
+                    //       post.postImageUrl
+                    //     ),
+                    Padding(
+                      padding:  EdgeInsets.symmetric(vertical: 10),
+                      child:  InkWell(
+                        onTap: () {
+                          
+                        },
+                        child: Image.network(
+                           widget.post.postImageUrl,
+                           height: 280,
+                          fit: BoxFit.contain,),
+// >>>>>>> master
                       ),
-                    ),
+                        
+                      ),
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -114,10 +162,14 @@ class Post extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            const Padding(
+// <<<<<<< movsisyan2_branch_
+//                             const Padding(
+// =======
+                            Padding(
+// >>>>>>> master
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
-                                '20',
+                                '$listLength',
                                 style:
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
@@ -134,7 +186,7 @@ class Post extends StatelessWidget {
                             const Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
-                                '125',
+                                'post.postFavoriteNumber',
                                 style:
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
@@ -213,12 +265,24 @@ class Post extends StatelessWidget {
                   Container(
                     width: 200,
                     child: TextFormField(
-                      decoration: const InputDecoration(
+// <<<<<<< movsisyan2_branch_
+//                       decoration: const InputDecoration(
+// =======
+                      controller: commentsController,
+                      decoration: InputDecoration(
+// >>>>>>> master
                         border: InputBorder.none,
                         hintText: "Add a comment",
                       ),
                     ),
                   ),
+                  ElevatedButton(onPressed: (){
+                    post.comments.add(Comments(commentsUserImageUrl: 'commentsUserImageUrl', 
+                    commentsName: 'commentsName', 
+                    commentsText: commentsController.text, 
+                    commentsTime: DateTime.now(), 
+                    commentsFavoriteNumber: 8));
+                  }, child: const Text('add')),
                 ],
               ),
             )
