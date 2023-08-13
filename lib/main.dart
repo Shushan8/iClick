@@ -13,6 +13,10 @@ import 'package:i_click/screens/post.dart';
 
 import 'package:i_click/provider/provider.dart';
 import 'package:i_click/provider/userprovider.dart';
+// <<<<<<< movsisyan2_branch_
+import 'package:i_click/screens/account.dart';
+import 'package:i_click/screens/home.dart';
+// =======
 // import 'package:i_click/widget/coments.dart';
 
 // =======
@@ -22,6 +26,7 @@ import 'package:i_click/provider/userprovider.dart';
 // import 'package:i_click/screens/post.dart';
 // import 'package:i_click/screens/registration_screens/welcome_screen.dart';
 // >>>>>>> 02105098d9b16a366b83de9e83d962cb30dc8401
+// >>>>>>> master
 import 'package:provider/provider.dart';
 
 Future main() async {
@@ -55,7 +60,11 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
+// <<<<<<< movsisyan2_branch_
+//         home: Account(),
+// =======
         home: Home(),
+// >>>>>>> master
       ),
     );
   }

@@ -1,7 +1,10 @@
-
 import 'package:flutter/material.dart';
+// <<<<<<< movsisyan2_branch_
+import 'package:flutter_svg/flutter_svg.dart';
+// =======
 import 'package:i_click/model/comments.dart';
 import 'package:i_click/model/post.dart';
+// >>>>>>> master
 import 'package:i_click/screens/new_colection.dart';
 import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/widget/coments.dart';
@@ -36,37 +39,41 @@ class _PostScreenState extends State<PostScreen> {
         child: Column(
           children: [
             Padding(
-              padding:const EdgeInsets.only(left: 15, top: 40, right: 15),
+              padding: const EdgeInsets.only(left: 15, top: 40, right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const NewColectoin()));
+                          builder: (context) => const NewColectoin()));
                     },
-                    child:const Icon(
-                      Icons.arrow_back,
-                      size: 35,
+                    child: SvgPicture.asset(
+                      'assetc/icons/back.svg',
+                      width: 16,
+                      height: 14,
                     ),
                   ),
-                const  SizedBox(
-                    width: 140,
+                  SizedBox(
+                    width: 100,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.favorite_border,
-                          size: 35,
+                        SvgPicture.asset(
+                          'assetc/icons/heart 2.svg',
+                          width: 24,
+                          height: 24,
                         ),
-                        Icon(
-                          Icons.add_circle_outline_outlined,
-                          size: 35,
+                        SvgPicture.asset(
+                          'assetc/icons/plus1.svg',
+                          width: 24,
+                          height: 24,
                         ),
-                        Icon(
-                          Icons.upload,
-                          size: 35,
-                        )
+                        SvgPicture.asset(
+                          'assetc/icons/Upload.svg',
+                          width: 24,
+                          height: 24,
+                        ),
                       ],
                     ),
                   ),
@@ -104,6 +111,16 @@ class _PostScreenState extends State<PostScreen> {
                         ],
                       ),
                     ),
+// <<<<<<< movsisyan2_branch_
+//                     const Padding(
+//                       padding: EdgeInsets.symmetric(vertical: 10),
+//                       child: Image(
+//                         image: AssetImage(
+//                           'assetc/images/msnyz9L6gs4.jpg',
+//                         ),
+//                         height: 280,
+//                         fit: BoxFit.contain,
+// =======
                     // Image(
                     //     image: AssetImage(
                     //       post.postImageUrl
@@ -118,6 +135,7 @@ class _PostScreenState extends State<PostScreen> {
                            widget.post.postImageUrl,
                            height: 280,
                           fit: BoxFit.contain,),
+// >>>>>>> master
                       ),
                         
                       ),
@@ -127,7 +145,7 @@ class _PostScreenState extends State<PostScreen> {
                       children: [
                         Row(
                           children: [
-                          const  Padding(
+                            const Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
                                 '125',
@@ -135,13 +153,20 @@ class _PostScreenState extends State<PostScreen> {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            Iconka(ikonka: Icons.visibility_outlined)
-                           
+                            SvgPicture.asset(
+                              'assetc/icons/eye.svg',
+                              width: 46,
+                              height: 24,
+                            ),
                           ],
                         ),
                         Row(
                           children: [
+// <<<<<<< movsisyan2_branch_
+//                             const Padding(
+// =======
                             Padding(
+// >>>>>>> master
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
                                 '$listLength',
@@ -149,13 +174,16 @@ class _PostScreenState extends State<PostScreen> {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            Iconka(ikonka: Icons.textsms_outlined)
-                           
+                            SvgPicture.asset(
+                              'assetc/icons/Chat.svg',
+                              width: 46,
+                              height: 21,
+                            ),
                           ],
                         ),
                         Row(
                           children: [
-                         const   Padding(
+                            const Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
                                 'post.postFavoriteNumber',
@@ -163,8 +191,11 @@ class _PostScreenState extends State<PostScreen> {
                                     TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                             ),
-                            Iconka(ikonka: Icons.favorite_border)
-                            
+                            SvgPicture.asset(
+                              'assetc/icons/heart.svg',
+                              width: 46,
+                              height: 21,
+                            ),
                           ],
                         ),
                       ],
@@ -207,14 +238,14 @@ class _PostScreenState extends State<PostScreen> {
                                   imageUrl: userProvider.user[index].imageUrl,
                                   texts: userProvider.user[index].texts,
                                   coments: userProvider.user[index].coments,
-                                   messagetext: '',
+                                  messagetext: '',
                                   iconn: false,
                                   activity: '',
                                   like: '',
                                   imageIcon: false,
                                   follow: false,
-                                   meseges: false,
-                                   color: false,
+                                  meseges: false,
+                                  color: false,
                                 )),
                       ),
                     ),
@@ -225,8 +256,8 @@ class _PostScreenState extends State<PostScreen> {
             Container(
               child: Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20),
+                  const Padding(
+                    padding: EdgeInsets.all(20),
                     child: Image(
                       image: AssetImage('assetc/images/images.png'),
                     ),
@@ -234,8 +265,12 @@ class _PostScreenState extends State<PostScreen> {
                   Container(
                     width: 200,
                     child: TextFormField(
+// <<<<<<< movsisyan2_branch_
+//                       decoration: const InputDecoration(
+// =======
                       controller: commentsController,
                       decoration: InputDecoration(
+// >>>>>>> master
                         border: InputBorder.none,
                         hintText: "Add a comment",
                       ),

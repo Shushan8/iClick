@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_click/widget/navigationbar.dart';
 
@@ -55,14 +56,16 @@ class _AccountState extends State<Account> {
                                     fontSize: 14),
                               ),
                             ),
-                            const Padding(
+                            Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 30),
-                              child: Icon(
-                                Icons.settings,
+                              child: SvgPicture.asset(
+                                'assetc/icons/Setting.svg',
+                                width: 24,
+                                height: 24,
                                 color: Colors.white,
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ),
@@ -153,47 +156,49 @@ class _AccountState extends State<Account> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.network_cell,
-                size: 30,
-                color: Colors.grey,
+              SvgPicture.asset(
+                'assetc/icons/globe.svg',
+                width: 20,
+                height: 20,
               ),
               const SizedBox(
-                width: 10,
+                width: 20,
               ),
               Container(
-                height: 10,
-                width: 10,
+                height: 7,
+                width: 7,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue),
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromRGBO(81, 81, 198, 1),
+                ),
               ),
               const SizedBox(
-                width: 10,
+                width: 20,
               ),
-              const Icon(
-                Icons.install_desktop,
-                size: 30,
-                color: Colors.grey,
+              SvgPicture.asset(
+                'assetc/icons/u_instagram.svg',
+                width: 20,
+                height: 20,
               ),
               const SizedBox(
-                width: 10,
+                width: 20,
               ),
               Container(
-                height: 10,
-                width: 10,
+                height: 7,
+                width: 7,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue),
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromRGBO(81, 81, 198, 1),
+                ),
               ),
               const SizedBox(
-                width: 10,
+                width: 20,
               ),
-              const Icon(
-                Icons.facebook,
-                size: 30,
-                color: Colors.grey,
-              )
+              SvgPicture.asset(
+                'assetc/icons/facebook 1.svg',
+                width: 20,
+                height: 20,
+              ),
             ],
           ),
           const SizedBox(
