@@ -13,9 +13,9 @@ class AuthService {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (BuildContext context, snapshot) {
           if (snapshot.hasData) {
-            return SelectCategory();
-          } else {
             return SignUpScreen();
+          } else {
+            return SelectCategory();
           }
         });
   }

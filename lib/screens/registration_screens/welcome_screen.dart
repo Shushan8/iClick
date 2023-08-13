@@ -56,7 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const TextFiledRegister(
                     filedWidth: 350,
                     filedHintText: 'Password',
-                    filedIcon: Icons.dangerous,
+                    filedIcon: Icons.send,
                     filedIcons: true,
                   ),
                   const SizedBox(
