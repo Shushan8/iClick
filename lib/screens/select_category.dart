@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:i_click/provider/userprovider.dart';
 import 'package:i_click/screens/home.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
+import 'package:i_click/widget/searc_cards.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class SelectCategory extends StatefulWidget {
@@ -19,6 +22,9 @@ class _SelectCategoryState extends State<SelectCategory> {
   ];
   @override
   Widget build(BuildContext context) {
+
+    final collescts = Provider.of<Collect>(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -28,6 +34,7 @@ class _SelectCategoryState extends State<SelectCategory> {
                 const Image(
                   image: AssetImage(
                     'assetc/images/Header background.png',
+    
                   ),
                   height: 165,
                   fit: BoxFit.contain,
@@ -81,14 +88,77 @@ class _SelectCategoryState extends State<SelectCategory> {
                   Color.fromARGB(255, 136, 139, 244)
                 ],
               ),
+    // <<<<<<< HEAD
+    //             const Padding(
+    //               padding: EdgeInsets.all(10.0),
+    //               child: Text(
+    //                 'Who are you?',
+    //                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    //               ),
+    //             ),
+    //             Padding(
+    //               padding: const EdgeInsets.all(10.0),
+    //               child: Container(
+    //                 height: 430,
+    //                 width: double.infinity,
+    //                 child: GridView.builder(
+    //                   itemCount: img.length,
+    //                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+    //                     crossAxisCount: 2,
+    //                     childAspectRatio: 2 / 2,
+    //                     mainAxisExtent: 180,
+    //                     mainAxisSpacing: 10,
+    //                     crossAxisSpacing: 10
+    //                   ),
+    //                   itemBuilder: (context, index) => SearchCards(
+    //                               searcCardsImages:
+    //                                   collescts.collect[index].searcCardsImages,
+    //                               searcCartsText:
+    //                                   collescts.collect[index].searcCartsText,
+    //                               searcCartsText2:
+    //                                   collescts.collect[index].searcCartsText2,
+    //                               searcCardsTextFals:
+    //                                   collescts.collect[index].searcCardsTextFals,
+    //                               searcCardsTextTru:
+    //                                   collescts.collect[index].searcCardsTextTru,
+    //                                    searcCardsText1Fals: collescts.collect[index].searcCardsText1Fals,
+    //                             ),),
+    //               ),
+    //             ),
+    //             Padding(
+    //               padding: const EdgeInsets.all(30.0),
+    //               child: GradientText(
+    //                 'SHARE - INSPIRE - CONNECT',
+    //                 style: const TextStyle(
+    //                   fontSize: 17,
+    //                   fontWeight: FontWeight.w600,
+    //                 ),
+    //                 colors: const [
+    //                   Color.fromARGB(255, 81, 81, 198),
+    //                   Color.fromARGB(255, 136, 139, 244)
+    //                 ],
+    //               ),
+    //             ),
+    //             ElevatedButtons(
+    //                 whdth: 300,
+    //                 height: 50,
+    //                 textbutton: ' EXPLORE NOW',
+    //                 fanction: () {
+    //                   Navigator.of(context).push(MaterialPageRoute(
+    //                       builder: (context) => const Home()));
+    //                 },
+    //                 fontSizes: 17,
+    //                 borederRadi: 25),
+    //           ],
+            // ),
             ),
             ElevatedButtons(
                 whdth: 300,
                 height: 50,
                 textbutton: ' EXPLORE NOW',
                 fanction: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Home()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const Home()));
                 },
                 fontSizes: 17,
                 borederRadi: 25),

@@ -35,9 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
   curved_navigation_bar: ^1.0.3
-
   simple_gradient_text: ^1.2.4
   provider: ^6.0.5
   cloud_firestore: ^4.8.4
@@ -46,6 +44,13 @@ dependencies:
   json_serializable: ^6.7.1
   json_annotation: ^4.8.1
   google_sign_in: ^6.1.4
+  sign_in_button: ^3.2.0
+  google_fonts: ^5.1.0
+  flutter_svg: ^2.0.7
+  build_runner: ^2.4.6
+  image_picker: ^1.0.2
+  firebase_storage: ^11.2.5
+
   
 
 
@@ -73,60 +78,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assetc/images/Cards.png
-    - assetc/images/images.png
-    - assetc/images/images1.png
-    - assetc/images/images2.png
-    - assetc/images/msnyz9L6gs4.jpg
-    - assetc/images/Cardss.png
-    - assetc/images/Cards (1).png
-    - assetc/images/Cards (2).png
-    - assetc/images/Cards (3).png
-    - assetc/images/3.png
-    - assetc/images/4.png
-    - assetc/images/111.png
-    - assetc/images/222.png
-    - assetc/images/Header background.png
-    - assetc/images/5.png
-    - assetc/images/6.png
-    - assetc/images/8.png
-    - assetc/images/9.png
-    - assetc/images/11.png
-    - assetc/images/10.png
-    - assetc/images/12.png
-    - assetc/images/13.png
-    - assetc/images/14.png
-    - assetc/images/15.png
-    - assetc/images/16.png
-    - assetc/images/17.png
-    - assetc/images/18.png
-    - assetc/images/19.png
-    - assetc/images/20.png
-    - assetc/images/Dark Background.png
-    - assetc/images/Home 1.png
-    - assetc/images/Home 2.png
-    - assetc/images/5IHz5WhosQE.png
-    - assetc/images/Ellipse94.png
-    - assetc/images/img.png
-    - assetc/images/img1.png
-    - assetc/images/img2.png
-    - assetc/images/img3.png
-    - assetc/images/img4.png
-
-    - assetc/images/mard.png
-    - assetc/images/welcome.png
-
-    - assetc/images/mj2NwYH3wBA1.png
-    - assetc/images/mj2NwYH3wBA.png
-    - assetc/images/controllerimagess.png
-    - assetc/images/270591.png
-    - assetc/images/CdmpFw9vrX01.png
-    - assetc/images/CdmpFw9vrX02.png
-    - assetc/images/CdmpFw9vrX03.png
-    - assetc/images/Group7030.png
-    - assetc/images/Group8012.png
-    - assetc/images/Avatar.png
-    - assetc/images/Group0069991.png
+    - assetc/images/
+    - assetc/icons/
 
   #   - images/a_dot_ham.jpeg
 

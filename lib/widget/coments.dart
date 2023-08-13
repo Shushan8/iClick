@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:i_click/provider/provider.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -43,7 +44,7 @@ class Coments extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             color: color
                 ? Color.fromARGB(255, 246, 247, 249)
-                : Color.fromARGB(255,241, 241, 254)),
+                : Color.fromARGB(255, 241, 241, 254)),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,9 +55,9 @@ class Coments extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(10),
-                    child: Image(
-                      image: AssetImage(imageUrl),
-                    ),
+                  child: Image(
+                    image: AssetImage(imageUrl),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 10),
@@ -144,7 +145,13 @@ class Coments extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 50),
                 child: Positioned(
-                  child: iconn ? const IconFavorite() : Container(),
+                  child: iconn
+                      ? SvgPicture.asset(
+                          'assetc/icons/heart2.svg',
+                          width: 20,
+                          height: 20,
+                        )
+                      : Container(),
                 ),
               )
             ]),
@@ -301,12 +308,12 @@ class IconMessesges extends StatelessWidget {
             GradientText(
               '20',
               style: const TextStyle(),
-              colors:color
-                      ? [Colors.grey, Colors.grey]
-                      :  [
-                colorProvider.colorGradient1,
-                colorProvider.colorGradient2
-              ],
+              colors: color
+                  ? [Colors.grey, Colors.grey]
+                  : [
+                      colorProvider.colorGradient1,
+                      colorProvider.colorGradient2
+                    ],
             ),
             ShaderMask(
               shaderCallback: (Rect bounds) {

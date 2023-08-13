@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:i_click/screens/add_colections.dart';
 import 'package:i_click/widget/coments.dart';
 import 'package:i_click/widget/elevatedbutton.dart';
@@ -8,6 +9,7 @@ class NewColectoin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -22,22 +24,24 @@ class NewColectoin extends StatelessWidget {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const AddToColections()));
                     },
-                    child: const Icon(
-                      Icons.arrow_back,
-                      size: 35,
+                    child: SvgPicture.asset(
+                      'assetc/icons/back.svg',
+                      width: 18,
+                      height: 18,
                     ),
                   ),
                   const Text(
                     'Comments',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.backup_outlined,
-                        size: 35,
-                      )
+                      SvgPicture.asset(
+                        'assetc/icons/Edit Square.svg',
+                        width: 18,
+                        height: 18,
+                      ),
                     ],
                   ),
                 ],

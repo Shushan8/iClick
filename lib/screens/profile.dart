@@ -1,16 +1,25 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:i_click/screens/editprofile.dart';
 import 'package:i_click/widget/container.dart';
-import 'package:i_click/widget/navigationbar.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({super.key});
 
   @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  @override
   Widget build(BuildContext context) {
+    final authService = FirebaseAuth.instance;
+    // final signInProvider = Provider.of<SignInProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -39,6 +48,7 @@ class Profile extends StatelessWidget {
                           child: Text(
                             'thanphamdhbk@gmail.com',
                             style: TextStyle(
+                              fontSize: 15,
                               color: Color.fromRGBO(192, 192, 192, 1),
                             ),
                           ),
@@ -120,13 +130,13 @@ class Profile extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: (){
-                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const EditProfile()));
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const EditProfile()));
                   },
                   child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 30, vertical: 690),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 690),
                     child: Container(
                       height: 42,
                       width: 130,
@@ -144,9 +154,15 @@ class Profile extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 699),
-                  child: Icon(Icons.logout),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 699),
+                  child: InkWell(
+                    onTap: () {
+                      authService.signOut();
+                    },
+                    child: const Icon(Icons.logout_outlined),
+                  ),
                 ),
                 Padding(
                   padding:
@@ -174,7 +190,6 @@ class Profile extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const NavigationBarScreen(),
     );
   }
 }

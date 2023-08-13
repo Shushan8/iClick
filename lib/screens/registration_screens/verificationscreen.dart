@@ -15,6 +15,7 @@ class VerificationScreen extends StatefulWidget {
 class _VerificationScreenState extends State<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
+    final verifController = TextEditingController();
     return Scaffold(
         body: Column(children: [
       Stack(children: <Widget>[
@@ -74,7 +75,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                const TextFiledRegister(
+                 TextFiledRegister(
+                  controller: verifController,
                     filedHintText: 'Type verification code',
                     filedWidth: 310,
                     filedIcon: Icons.abc,
@@ -94,10 +96,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     height: 50,
                     textbutton: 'VERIFY',
                     fanction: () {
-                      
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>const SendVerificationScreen()));
-                    
+                          builder: (context) =>
+                              const SendVerificationScreen()));
                     },
                     fontSizes: 16,
                     borederRadi: 30),
