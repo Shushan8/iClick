@@ -22,7 +22,7 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     // TabController _tabController = TabController(length: 2, vsync: this);
-    return DefaultTabController(
+    return  DefaultTabController(
       length: 2,
       child: Scaffold(
           body: Column(children: [
@@ -58,7 +58,8 @@ class _AccountState extends State<Account> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14),
                                 ),
-                              ),
+                              ),]),
+                          )),
 // <<<<<<< gasparyan1_branch
                               const Padding(
                                 padding:
@@ -82,6 +83,7 @@ class _AccountState extends State<Account> {
                               height: 80,
                             ),
 // =======
+                          ]
                             ),
                             Padding(
                               padding:
@@ -93,16 +95,12 @@ class _AccountState extends State<Account> {
                                 color: Colors.white,
                               ),
                             )
-// >>>>>>> master
-                          ],
+// >>>>>>> master   
+                      ]
+                          
                         ),
                       ]),
-                    ],
-                  ),
-                ))
-              ],
-            ),
-            const SizedBox(
+                       const SizedBox(
               height: 15,
             ),
             const Padding(
@@ -122,7 +120,7 @@ class _AccountState extends State<Account> {
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
             ),
-            const SizedBox(
+             const SizedBox(
               height: 20,
             ),
             Container(
@@ -131,7 +129,7 @@ class _AccountState extends State<Account> {
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 246, 247, 249),
                   borderRadius: BorderRadius.circular(10)),
-              child: const Row(
+              child:  Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -199,6 +197,143 @@ class _AccountState extends State<Account> {
                 const SizedBox(
                   width: 10,
                 ),
+                    ],
+                  ),
+                   Text(
+                  'Following',
+                  style: TextStyle(
+                      fontSize: 15, color: Color.fromARGB(255, 103, 101, 101)),
+                ),
+            //   ],
+            // ),
+          //  ], 
+          // ),
+          
+          //  SizedBox(
+          //   height: 15,
+          // ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                'assetc/icons/globe.svg',
+                width: 20,
+                height: 20,
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                height: 7,
+                width: 7,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromRGBO(81, 81, 198, 1),
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              SvgPicture.asset(
+                'assetc/icons/u_instagram.svg',
+                width: 20,
+                height: 20,
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                height: 7,
+                width: 7,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromRGBO(81, 81, 198, 1),
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              SvgPicture.asset(
+                'assetc/icons/facebook 1.svg',
+                width: 20,
+                height: 20,
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 45,
+                width: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: const Color.fromARGB(255, 243, 245, 247),
+                ),
+                child: SizedBox(
+                  height: 60,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: items.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (ctx, index) {
+                      return InkWell(
+                        onTap: () {
+                          setState(() {
+                            current = index;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          margin: const EdgeInsets.all(5),
+                          width: 140,
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: current == index
+                                ? const Color.fromRGBO(241, 241, 254, 1)
+                                : Colors.white54,
+                            borderRadius: current == index
+                                ? BorderRadius.circular(10)
+                                : BorderRadius.circular(5),
+                          ),
+                          child: Center(
+                            child: Text(
+                              items[index],
+                              style: GoogleFonts.laila(
+                                  fontWeight: FontWeight.bold,
+                                  color: current == index
+                                      ? const Color.fromRGBO(136, 139, 244, 1)
+                                      : Colors.grey),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 30),
+            child: Column(
+              children: [
+                Icon(
+                  icons[current],
+                  size: 150,
+                )
+              ],
+            ),
+          )
+                
+              
+            
+           
 // <<<<<<< gasparyan1_branch
 //                 Container(
 //                   height: 10,
@@ -318,139 +453,14 @@ class _AccountState extends State<Account> {
 //           ]),
 //           bottomNavigationBar: const NavigationBarScreen()),
 // =======
-                Text(
-                  'Following',
-                  style: TextStyle(
-                      fontSize: 15, color: Color.fromARGB(255, 103, 101, 101)),
-                )
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                'assetc/icons/globe.svg',
-                width: 20,
-                height: 20,
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Container(
-                height: 7,
-                width: 7,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color.fromRGBO(81, 81, 198, 1),
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              SvgPicture.asset(
-                'assetc/icons/u_instagram.svg',
-                width: 20,
-                height: 20,
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Container(
-                height: 7,
-                width: 7,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color.fromRGBO(81, 81, 198, 1),
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              SvgPicture.asset(
-                'assetc/icons/facebook 1.svg',
-                width: 20,
-                height: 20,
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 45,
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: const Color.fromARGB(255, 243, 245, 247),
-                ),
-                child: SizedBox(
-                  height: 60,
-                  width: double.infinity,
-                  child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: items.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (ctx, index) {
-                      return InkWell(
-                        onTap: () {
-                          setState(() {
-                            current = index;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          margin: const EdgeInsets.all(5),
-                          width: 140,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            color: current == index
-                                ? const Color.fromRGBO(241, 241, 254, 1)
-                                : Colors.white54,
-                            borderRadius: current == index
-                                ? BorderRadius.circular(10)
-                                : BorderRadius.circular(5),
-                          ),
-                          child: Center(
-                            child: Text(
-                              items[index],
-                              style: GoogleFonts.laila(
-                                  fontWeight: FontWeight.bold,
-                                  color: current == index
-                                      ? const Color.fromRGBO(136, 139, 244, 1)
-                                      : Colors.grey),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 30),
-            child: Column(
-              children: [
-                Icon(
-                  icons[current],
-                  size: 150,
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-      bottomNavigationBar: const NavigationBarScreen(),
-// >>>>>>> master
-    );
+               
+        
+        
+      
+     
+
+          ]),
+     bottomNavigationBar: const NavigationBarScreen(),
+    ),);
   }
 }

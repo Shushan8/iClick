@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 // <<<<<<< movsisyan2_branch_
 import 'package:flutter_svg/flutter_svg.dart';
 // =======
-import 'package:i_click/screens/add_post.dart';
+// import 'package:i_click/screens/add_post.dart';
 import 'package:i_click/screens/adddd.dart';
-import 'package:i_click/screens/new_colection.dart';
-import 'package:i_click/screens/popular.dart';
-import 'package:i_click/widget/home_widget.dart';
+// import 'package:i_click/screens/new_colection.dart';
+// import 'package:i_click/screens/popular.dart';
+// import 'package:i_click/widget/home_widget.dart';
 // >>>>>>> master
 
 class NavigationBarScreen extends StatefulWidget {
